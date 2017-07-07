@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css.css">
+	</head>
+	<body>
+		<div id="chessboard">
+			<svg id="theboard" width="560" height="560" preserveAspectRatio="xMidYMin"></svg>
+		</div>
+
+		<script src="chess.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.5.3/svg.js"></script>
+		<script src="svg.draggable.js"></script>
+		<script src="game.js"></script>
+		<script>
+			// function createBoard() {
+			    var draw = SVG.get('theboard');
+			    
+			    var chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+			    var nums = [8, 7, 6, 5, 4, 3, 2, 1];
+
+			    for (var row = 0; row < 8; row++) {
+			        for (var column = 0; column < 8; column++) {
+			            /* every odd row starts with the light colour */
+			            if (row % 2 == 0) {
+			                var colour = (column % 2 == 0) ? '#A9A9A9' : '#878787';
+			            } else {
+			                var colour = (column % 2 == 0) ? '#878787' : '#A9A9A9';
+			            }
+			            
+			            // draw.rect(70, 70).move(column * 69, row * 69).fill(colour)
+			            //  .id( chars[column] + nums[row] );
+
+			            draw.rect(70, 70).move(column * 69, row * 69).attr({
+			                fill: colour,
+			                id: chars[column] + nums[row]
+			            });
+			        }
+			    }
+			// }
+
+			// createBoard();
+			var game = new Chess();
+			console.log(game.moves());
+			
+
+
+			
+
+			function movePiece(piece, square) {
+				var p = SVG.get(square).bbox();
+				var k = SVG.get(piece);
+
+				k.move(p.cx - 30, p.cy - 30);
+			}
+
+			// game.move('d4');
+			// movePiece(pieces[0], 'h3');
+			// game.move('a6');
+			game.reset();
+			startPosition( fenToObj(game.fen()) );
+			// movePiece('bN', 'f4');
+
+			SVG.get('bN').draggable().on('dragend', function(event) {
+				// console.log(event.detail.m);
+				// console.log(event.detail.p);
+				console.log( SVG.get('f3').rbox() );
+				console.log( SVG.get('f3').bbox() );
+				game.moves().forEach(function(move) {
+					// if (SVG.get(detail.m) == move) {
+						// game.move('a6');
+						// movePiece('bN', 'f4');
+					// }
+					// console.log(event.detail.p);
+				});
+			});
+
+		</script>
+	</body>
+</html>

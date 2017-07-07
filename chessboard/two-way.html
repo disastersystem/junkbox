@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<form>
+			<input type="text" placeholder="Any more skills?" id="newSkill">
+		</form>
+		
+		<h3>
+			<span id="name"></span> has a score of 
+			<span id="score"></span> and has these skills:
+		</h3>
+
+		<ul id="skills"></ul>
+
+		<script src="bind.js"></script>
+		<script>
+			var values = {
+				skills: [
+					'chicken'
+				]
+			};
+
+			var elements = {
+				skills: {
+					dom: '#skills',
+					transform: function (value) {
+						return '<li>' + this.safe(value) + '</li>';
+					},
+				}
+			};
+
+			var player = Bind(values, elements);
+
+			document.querySelector('form').onsubmit = function (event) {
+				event.preventDefault();
+				player.skills.push(document.querySelector('#newSkill').value);
+				this.reset();
+			};
+		</script>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<style>
+			#tasks { width: 400px; margin: 50px auto; }
+		</style>
+	</head>
+	<body>
+		<div id="tasks">
+			<tasks></tasks>
+		</div>
+
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script>
+			Vue.component('tasks', {
+				template: `
+					<div>
+						<task v-for="task in tasks">{{ task.description }}</task>
+					</div>
+				`,
+
+				data() {
+					return {
+						tasks: [
+							{ description: "awdad", completed: true },
+							{ description: "fdggfdg", completed: true },
+							{ description: "awdggddad", completed: false },
+							{ description: "awxcxd", completed: true }
+						]
+					};
+				}
+			});
+
+			Vue.component('task', {
+				template: '<li><slot></slot></li>'
+			});
+
+			new Vue({
+				el: '#tasks',
+			});
+		</script>
+
+	</body>
+</html>
