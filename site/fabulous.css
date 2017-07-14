@@ -1,0 +1,36 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #f1f1f1;
+}
+
+.words {
+	color: #ddd;
+	font-size: 500%;
+	font-family: 'Quicksand', sans-serif;
+	text-align: center;
+	margin-top: 20%;
+}
+
+.container { 
+	display: flex; 
+	position: fixed; 
+	bottom: 0; 
+	justify-content: center; 
+	width: 100%;
+}
+
+.image {
+	display: block;
+	margin: 0 30px;
+}
+
+.image:nth-child(even) {
+	margin-left: 100px;
+}
+
+@media all and (max-width: 700px) {
+	.image:nth-child(even) {
+		display: none;
+	}
+}
