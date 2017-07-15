@@ -12,7 +12,7 @@
 	<body>
 		<div class="container">
 			<div class="top">
-				<h2 class="words">why tho</h2>
+				<h2 class="words">why though</h2>
 			</div>
 			
 			<div class="bottom">
