@@ -10,11 +10,15 @@
 		<link rel="stylesheet" type="text/css" href="site/fabulous.css">
 	</head>
 	<body>
-		<h2 class="words">why tho</h2>
-
 		<div class="container">
-			<img src="site/img/why.png" class="image">
-			<img src="site/img/oh.png" class="image">
+			<div class="top">
+				<h2 class="words">why tho</h2>
+			</div>
+			
+			<div class="bottom">
+				<img src="site/img/why.png" class="image">
+				<img src="site/img/oh.png" class="image">
+			</div>
 		</div>
 	</body>
 </html>
