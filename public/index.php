@@ -18,5 +18,30 @@
 				</i>
 			</a>
 		</div>
+
+		<script>
+			window.addEventListener("deviceorientation", handleOrientation, true)
+
+			function handleOrientation(event) {
+				var absolute = event.absolute
+				var alpha    = event.alpha
+				var beta     = event.beta
+				var gamma    = event.gamma
+
+				// accelValuesX[index] = sensorEvent.values[0];
+	   //          accelValuesY[index] = sensorEvent.values[1];
+	   //          accelValuesZ[index] = sensorEvent.values[2];
+
+				let rootSquare = Math.sqrt(
+	            	Math.pow(alpha, 2) +
+	            	Math.pow(beta, 2) +
+	            	Math.pow(gamma, 2)
+	            )
+
+	            if (rootSquare < 2.0) {
+		            console.log('dropped')
+	            }
+			}
+		</script>
 	</body>
 </html>
