@@ -79,13 +79,13 @@ function timeToSpeech(time) {
 	}
 
 	if (minutes > 20) {
-		// floor the number to the tenth, e.g. 59 to 50, and return it as a word, e.g. 
+		/* floor the number to the tenth, e.g. 59 to 50, and return it as a word, e.g. fifty */
 		let ten = numbers[Math.floor(minutes / 10) * 10]
-		// if the number is already floored, like 50,  simply return an empty string, else
-		// return the minutes as a word with a hyphen prepended, e.g. -nine
+		/* if the number is already floored, like 50,  simply return an empty string, else */
+		/* return the minutes as a word with a hyphen prepended, e.g. -nine */
 		let one = (minutes % 10 != 0 ? `-${numbers[minutes % 10]}` : '')
 		
-		// e.g. It's eleven fifty-nine am
+		/* e.g. It's eleven fifty-nine am */
 		return `It's ${hour} ${ten}${one} ${meridiem}`
 	}
     

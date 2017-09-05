@@ -185,10 +185,9 @@ function startPosition(pos) {
         if (pos.hasOwnProperty(key)) {
             var p = SVG.get(key).bbox();
 
-            var piece = draw.image('pieces/' + pos[key] + '.svg', 60, 60).move(
-                    p.cx - 30,
-                    p.cy - 30
-            ).attr({ id: pos[key] });
+            var piece = draw.image('pieces/' + pos[key] + '.svg', 60, 60)
+                .move(p.cx - 30, p.cy - 30)
+                .attr({ id: pos[key] })
         }
     }
 }
