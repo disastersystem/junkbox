@@ -1,0 +1,95 @@
+.loginRegisterModal
+{
+	background-color: hsla(0,0%,0%,.5);
+}
+.loginRegisterModal .nav
+{
+	background-color: 	#0e4659;
+	border: none;
+	
+}
+
+	.loginRegisterModal .nav li
+	{
+		background-color: 	#0e4659;
+		width:				50%;
+	}
+	
+	.nav li.active a
+	{
+		background: #105066 !important;
+		border:		none !important;
+		color:		#fff !important;
+	}
+	
+		.loginRegisterModal .nav li a
+		{
+			border:				none;
+			padding:			10px 0;
+			border-radius:		0;
+			color:				#aaa;
+			text-align:			center;
+			
+		}
+	
+		.loginRegisterModal .nav li a:hover
+		{
+			background-color: 	#105066;
+			color:				#fff !important;
+			border: 			none;
+			cursor:				pointer;
+		}
+		
+.contentType
+{
+	background-color: #105066;
+	color:		#fff;
+}
+
+	.contentType input
+	{
+		background: #477787;
+		color:		#fff;
+		border:		1px solid #0e4659;
+		border-top:	2px solid #0e4659;
+		border-radius: 5px;
+	}
+	
+		.contentType input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+			color:    #dde;
+		}
+		.contentType input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		   color:    #909;
+		   opacity:  1;
+		}
+		.contentType input::-moz-placeholder { /* Mozilla Firefox 19+ */
+		   color:    #909;
+		   opacity:  1;
+		}
+		.contentType input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		   color:    #909;
+		}
+
+.exitModal
+{
+	color: 			#fff;
+	background: 	#1e5669 !important;
+	border:			1px solid #0e4659 !important;
+	padding:		6px 0;
+	text-align:		center;
+	cursor: 		pointer;
+	margin-top:		10px;
+	width:			100%;
+}		
+		
+.errorMessages
+{
+	color: #fff;
+	font-family: arial;
+}
+
+.loginRegisterModal .modal-footer
+{
+	border-top: 1px solid #0e4659;
+}
+		

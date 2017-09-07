@@ -1,0 +1,165 @@
+/* PROFILE HEADER MENU */
+body .container-fluid {
+    overflow: scroll;
+}
+div.main-menu {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+div.back-icon .m_arrow_back,
+div.back-arrow .m_arrow_back {
+    text-align: left;
+    font-size: 26px;
+    padding: 18px 10px 0 10px;
+}
+
+.profileCoverBG
+{
+	background-image: url('../img/fjell50.png');
+	background-size: cover;
+	background-position: center center;
+	width: 100%;
+	height: 300px;
+
+}
+
+div.back-icon a {
+	color: #444;
+	text-decoration: none;
+    text-align: right;
+}
+div.back-icon a:hover {
+    color: #29a;;
+	text-decoration: none;
+}
+
+div.back-icon .reg-button, div.back-icon .log-button {
+    text-align: right;
+    padding-right: 15px;
+}
+
+.profile-name h4 {
+    margin: 0;
+	padding: 20px 0;
+}
+
+a h4 {
+    padding: 20px 0;
+}
+
+.logged_in_message {
+    padding: 10px 0 0 0;
+    margin: 0;
+}
+
+.profile-header {
+    height: 100px;
+    text-align: center;
+    margin-bottom: 100px;
+    z-index: 500;
+}
+/* /PROFILE HEADER MENU */
+
+/* PROFILE HEADER IMG */
+.vertical-align {
+    position: relative;
+    top: 100%;
+    transform: translateY(-50%);
+	z-index: 100;
+}
+
+.profile-header img.profile-img {
+    border-radius: 50%;
+    width: 150px;
+}
+/* /PROFILE HEADER IMG */
+
+/* FLAG AND SETTINGS ICON*/
+div.globe  {
+    text-align: left;
+    padding: 10px 8px;
+}
+div.globe img {
+    width: 40px;
+}
+.userSettings {
+    cursor: pointer;
+}
+div.userSettings
+{
+	display: inline;
+    text-align: right;
+    padding:	10px;
+    font-size: 100%;
+	background: #333;
+	color: #fff;
+}
+div.userSettings i {
+	color: #fff;
+}
+div.userSettings:hover
+{
+	color: #29a;
+    cursor: pointer;
+}
+/* /FLAG AND SETTINGS ICON*/
+
+/* PROFILE CONTENT*/
+.profile-content {
+    margin-top: 70px;
+    padding: 8px;
+}
+
+/*POST BOX*/
+div.post-box {
+    background-color: #fafafa;
+    height: auto;
+    margin-bottom: 12px;
+}
+
+/*post image/video*/
+div.post-box div.post-img img {
+    width: 100px;
+    padding: 6px;
+}
+ /*post comment*/
+div.post-box div.post-comment p {
+    padding: 5px;
+    margin: 0;
+}
+/*post-delete button*/
+div.post-box div.post-delete {
+    font-size: 15px;
+    text-align: right;
+    padding: 5px 8px 0 0;
+    color: #444;
+}
+
+
+
+.posts-container {
+    text-align: center;
+    margin-top: 75px;
+}
+
+.always-center-posts {
+    display: inline-block;
+    max-width: 1200px;
+}
+
+.img-container {
+    display: inline-block;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    background-color: #bbb;
+    margin: 2px;
+    margin-top: -1px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.status-message h2 {
+    font-family: 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}

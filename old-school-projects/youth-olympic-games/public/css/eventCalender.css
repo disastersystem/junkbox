@@ -1,0 +1,152 @@
+.eventCalender
+{
+	position: 		relative;
+	background: 	#eee;
+	text-align: 	center;
+	border-left:	1px solid #ddd;
+	
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	-moz-user-select: none;     /* Firefox all */
+	-ms-user-select: none;      /* IE 10+ */
+	user-select: none;          /* Likely future */   
+}
+	.calenderHeader
+	{
+		color: #777;
+		margin: 0 15%;
+		padding: 5% 0;
+		font-variant: small-caps;
+		font-family: 'Montserrat', sans-serif;
+		letter-spacing: 1px;
+	}
+
+	.eventDates
+	{
+		overflow-y: scroll;
+	}
+
+		.eventDate
+		{
+			font-size:	150%;
+			color: 		#888;
+			margin:		0 auto;
+			width:		56px; 	
+			height:		56px;
+			line-height:56px;
+			margin:		30% auto;
+			cursor: 	pointer;
+			font-family: 'Montserrat', sans-serif;
+		}
+
+	.activeDate
+	{
+		background: 	#29a;
+		border-radius: 	50%;
+		color: 			#eee;
+	}
+/*---------------------------------------------------------------------------*/
+
+	.datePag
+	{
+		font-size:	200%;
+		color:		#aaa;
+		text-align: center;
+		width:		100%;
+		cursor: 	pointer;
+		
+		border: 		1px solid #ddd;
+		border-left: 	none;
+		border-right: 	none;
+	}
+
+		.datePrev
+		{
+			background: #eaeaea;
+			margin: 5px 0;
+		}
+
+		.dateNext
+		{
+			background: #eaeaea;
+		}
+		
+			.enabledPagButton
+			{
+				background-color: #eaeaea;
+			}
+			
+			.disabledPagButton
+			{
+				background-color: #dadada;
+			}
+
+	/*ScrollBar:*/
+
+	.eventDates::-webkit-scrollbar
+	{
+	  width: 0px;
+	}
+
+
+/*---------------------------------------------------------------------------*/
+/*							M E D I A   Q U E R Y		  					 */
+/*---------------------------------------------------------------------------*/
+
+
+
+@media (max-width: 992px) 	/* MD: */
+{
+	.eventDate
+	{
+		margin:		30% auto;
+		width:		56px; 	
+		height:		56px;
+		line-height:56px;
+	}
+}
+
+@media (max-width: 768px) 	/* XS: */
+{
+	.eventDate
+	{
+		font-size:	140%;
+		margin:		30% auto;
+		
+		width:		48px; 	
+		height:		48px;
+		line-height:48px;
+		
+	}
+	
+	.headerDate
+	{
+		display: none;
+	}
+}
+
+@media (max-width: 600px) 	/* XXS: */
+{
+	.eventDate
+	{
+		font-size:	120%;
+		
+		width:		44px; 	
+		height:		44px;
+		line-height:44px;
+		
+		margin:		50% auto;
+	}
+}
+
+@media (max-width: 480px) 	/* XXS: */
+{
+	.eventDate
+	{
+		font-size:	110%;
+		
+		width:		36px; 	
+		height:		36px;
+		line-height:36px;
+		
+	}
+}

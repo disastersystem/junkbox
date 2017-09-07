@@ -1,0 +1,154 @@
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+input {
+    font-family: 'Play', sans-serif;
+}
+
+#column-wrapper {
+    display: flex;
+}
+
+#content {
+    flex-grow: 1;
+}
+
+#playlist-content {
+    flex-grow: 1;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    margin: 60px 0;
+}
+
+.playlist-list {
+    padding: 15px 0;
+    margin: 0;
+    border-top: 1px solid #fff;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.playlist-list:nth-child(odd) {
+    background-color: #F1F1F1;
+}
+
+.playlist-list:nth-child(even) {
+    background-color: #F5F5F5;
+}
+
+.column {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.stuff {
+    flex-grow: 1;
+}
+
+select {
+    padding: 2px 6px;
+}
+
+.edit {
+    flex-grow: 2;
+}
+
+.subitem {
+    margin: 5px;
+    padding: 1px;
+}
+
+.vid {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    padding: 0;
+    background-color: #eee;
+}
+
+.play-button {
+    align-self: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 70px;
+}
+
+.add-transcript-button {
+    border: 1px solid #aaa;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    border-left: 0;
+}
+
+.add-transcript-button:hover {
+    background-color: #FF9900;
+	border-color: #FFB247;
+	color: #fff;
+}
+
+.video-title-form {
+    display: flex;
+}
+
+.video-title-text {
+    padding: 2%;
+    flex-grow: 2;
+}
+
+.video-title-submit {
+    padding: 2%;
+    flex-grow: 1;
+}
+
+#playlists {
+    margin-top: 65px;
+}
+
+.playlist-list {
+    padding-top: 12px;
+}
+
+.playlist-description {
+    border-bottom: 1px solid #ddd;
+    padding: 30px 0;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+/*--------------------------
+    create playlist form
+--------------------------*/
+
+.create-playlist-form {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.create-playlist-title {
+    width: 100%;
+}
+
+.create-playlist-desc {
+    display: block;
+    width: 96%;
+    height: 150px;
+    font-family: 'Play';
+    font-size: 18px;
+    padding: 2%;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+}
+
+.create-playlist-submit {
+    margin-top: 10px;
+}

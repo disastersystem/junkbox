@@ -1,0 +1,56 @@
+
+
+.stats_container {
+	margin-top: 30px;
+}
+
+#tablehead {
+   background-color: #2299AA;
+   color: #fff;
+   font-weight: bold;
+   font-size:120%;
+}
+
+#tablehead th {
+	text-align: center;
+}
+
+#medaljer {
+	background-color: #fff;
+	color: #000;
+	padding: 10px;
+	text-align:center;
+    font-weight: bold;
+}
+#medaljer td {
+	padding: 10px 0;
+}
+
+/* .fixed{
+  top:0;
+  position:fixed;
+  width:auto;
+  display:none;
+  border:none;
+} */
+
+.table>tbody>tr>td { border: none; }
+.table>thead>tr>th { border: none; }
+tr:nth-child(even) { background: #f7f7f7; }
+
+@media screen and (max-width: 992px) {
+	#medaljer_h2 {
+		margin-top: 130px;
+	}
+	#medaljer {
+		font-size: 80%;
+	}
+	#tablehead th span {
+		display: none;
+	}
+	
+	::-webkit-scrollbar {
+	background: none;
+	width: 0px;
+}
+}

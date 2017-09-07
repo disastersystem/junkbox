@@ -1,0 +1,81 @@
+.videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.videos a { text-decoration: none; }
+
+.videos a:hover .video .fa-play-circle-o, .videos a:hover .video .fa-list  { color: rgba(0, 0, 0, 0.7); }
+
+.video {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    background-image: url(../posters/small/deadpool.jpg);
+    background-repeat: no-repeat;
+}
+
+.videos .meta-data {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    margin: 10px;
+}
+
+.video .fa-play-circle-o, .video .fa-list {
+    align-self: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 70px;
+}
+
+.button_lang {
+    background-color: #fff;
+	border: 1px solid #ccc;
+    font-size: 16px;
+	padding: 10px 20px;
+    cursor: pointer;
+}
+.button_lang:hover {
+    background-color: rgba(116,157,224, 0.8);
+	border-color: rgba(116,157,224, 0.5);
+	color: #fff;
+}
+
+#transcript-buttons {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.playlist-select {
+    padding: 8px 20px;
+}
+
+#textbox {
+    display: inline-block;
+    overflow: auto;
+    height: 340px;
+    width: 390px;
+}
+
+#textbox p {
+    color: #000;
+    padding: 5px;
+}
+#textbox p:hover {
+    color: #749DE0;
+    cursor: pointer;
+}
+
+/*SCROLLBAR*/
+#textbox::-webkit-scrollbar { width: 12px; height: 12px; }
+#textbox::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.1); }
+#textbox::-webkit-scrollbar-thumb { background: rgba(116,157,224, 0.5); }
+
+.selected {
+    background-color: #8FB0E6;
+    color: #fff;
+}

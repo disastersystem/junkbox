@@ -1,0 +1,26 @@
+.list-group {
+    /*cursor: move;*/
+    /*-webkit-user-drag: none;*/
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.list-group-item {
+    display: flex;
+    flex-flow: column;
+    margin: 20px 5px;
+}
+
+.vid {
+    width: 220px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+}
+
+.meta {
+    padding: 10px;
+}

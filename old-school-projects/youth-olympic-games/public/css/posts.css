@@ -1,0 +1,626 @@
+html, body, .container-fluid {
+	height: 100%;
+	background: #fff;
+}
+
+body {
+	overflow: hidden;
+}
+
+::-webkit-scrollbar {
+	background: none;
+	width: 0px;
+	height: 0px;
+}
+
+::-webkit-input-placeholder { color: #000; }
+:-moz-placeholder { color: #000; opacity: 1; }
+::-moz-placeholder { color: #000; opacity: 1; }
+:-ms-input-placeholder { color: #000; }
+
+img { height: 100%; }
+video { height: 100%; width: 100%; }
+.modal video { width: 100%; height: auto; }
+
+.main-menu {
+	background: #f9f9f9;
+	padding: 10px;
+	overflow: auto;
+	border-bottom: 1px solid #ccc;
+}
+
+	.main-menu h1
+	{
+		font-size: 28px;
+		font-variant: small-caps;
+		letter-spacing:	1px;
+	}
+
+.m_arrow_back {
+	font-size: 22px;
+    padding: 10px;
+	color: #555;
+}
+.m_arrow_back:hover {
+	color: #29a;
+}
+
+h1 {
+	display: inline-block;
+	color: #000;
+}
+
+.sport-info {
+	font-size: 18px;
+	font-variant: small-caps;
+}
+
+.all-posts {
+	height: 85%;
+	padding: 0;
+	margin: 0;
+}
+
+.hide-scrollbar {
+	overflow: hidden;
+	position: relative;
+	bottom: 8px;
+}
+
+.athletes-posts, .audience-posts {
+	position: relative;
+	width: auto;
+	height: 50%;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+	top: 16px;
+	padding-right: 40px;
+
+	-moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.row-posts { height: 50%; position: relative; }
+
+.post {
+	background: #eee;
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+.mid-bar {
+	color: #000;
+	padding: 10px 0;
+}
+
+.mid-bar-label {
+	width: 49%;
+	display: inline-block;
+	text-align: center;
+	padding: 0 20px;
+	margin: 0;
+}
+
+.scrollOn {
+	position: fixed;
+    right: 0;
+    top: 0;
+	bottom: 0;
+	padding: 0 10px;
+	cursor: pointer;
+	background: #fff;
+
+	-moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+
+	opacity: 0;
+}
+
+.scrollOn:hover {
+	background: #F9F9F9;
+	opacity: 1;
+}
+
+
+.modal-header {
+	border-bottom: none;
+	min-height: 50px;
+}
+
+
+
+/* AUTHOR: */
+
+.author
+{
+	padding: 10px;
+	border-top: 1px solid #eee;
+}
+
+	.authorImage
+	{
+		display: inline;
+		width: 50px;
+		height: auto;
+		border-radius: 100%;
+	}
+
+	.authorTimestamp
+	{
+		margin-left: 12px;
+		color:	#aaa;
+	}
+
+	.authorName
+	{
+		margin-left: 12px;
+	}
+
+.deletePostButton {
+	float: right;
+	margin-right: 50px;
+	border: none;
+	background: none;
+	color: #888;
+}
+
+.sharingContainer
+{
+	display: none;
+	text-align: center;
+	border-bottom: 1px solid #eee;
+	border-top: 1px solid #eee;
+	background-color: #f8f8f8;
+}
+
+	.shareButtons
+	{
+		cursor: pointer;
+		color: #3B5998;
+		font-size:	200%;
+		margin-right: 20px;
+		border: none;
+		background: none;
+	}
+
+.modalPost .commentField
+{
+	width:			100%;
+	background:		#fff;
+	height: 		65px;
+	padding: 		0;
+	border-bottom:	1px solid #ddd;
+}
+	
+	
+
+	.commentField textarea
+	{
+		height:			65px;
+		border-left:	2px solid #f0f0f0;
+		text-align: 	left;
+		padding:		20px !important;
+		resize: 		none;
+		outline:		none;
+	}
+
+	.submitComment
+	{
+		text-align: 	center;
+		background: 	#28b0cc;
+		height:			65px;
+		width:			100%;
+		color:			#fff;
+		font-size:		200%;
+		cursor: 		pointer;
+		outline-color:	#333;
+		border: 		none;
+	}
+
+
+.post-button {
+	
+	width: 64px;
+	height:	64px;
+	border-radius: 100%;
+	background-color: #00a996; /* E04006 */
+	font-size: 30px;
+	font-variant: small-caps;
+	
+	border: 2px solid #008976;
+	color: #fff;
+	font-weight: bold;
+	display: inline-block;
+
+	float: right;
+	outline: 0;
+}
+
+.postModal .modal-body {
+	background: #f0f0f0;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+#uploadModal .modal-body {
+	background-color: #fff;
+}
+
+.media-view img {
+	width: 100%;
+}
+
+.post {
+	position: relative;
+}
+
+.modal-content {
+	/* reset the bootstrap box-shadow */
+	-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    -o-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.modal {
+	padding: 0;
+	background-color: rgba(255, 255, 255, .8);
+}
+
+#uploadChoices {
+	margin-bottom: 30px;
+}
+
+/**
+ * fullscreen image modal: COMMENT SECTION.
+ */
+
+.comments-view
+{
+	height: 300px;
+	background: #f0f0f0;
+	overflow-y: scroll;
+	padding: 0 1%;
+	border-bottom: 1px solid #ddd;
+}
+
+.comment {
+	margin: 2% 0;
+	padding: 2%;
+	background: #fff;
+	border-bottom: 3px solid #e0e0e0;
+	border-radius: 5px;
+
+}
+
+.comment-author-img {
+	background: #fff;
+	height: 40px;
+	width: 40px;
+	margin-top: 2%;
+	border-radius: 10%;
+}
+
+.comment-author {
+	color: #08a;
+	font-size:	120%;
+	padding: .5% 0% 0% 0%;
+	margin-left: 12px;
+}
+
+.comment-body {
+	padding: .5% 1% 2% 0;
+	font-size:	110%;
+	margin-left: 12px;
+}
+
+.comment-author-img {
+	background: #fff;
+	height: 40px;
+	width: 40px;
+	margin-top: 2%;
+	border-radius: 100%;
+}
+
+.comment-author {
+	color: #08a;
+	font-size:	120%;
+	padding: .5% 0% 0% 0%;
+	margin-left: 12px;
+}
+
+.comment-timestamp {
+	color: #aaa;
+	text-align: right;
+}
+
+.modal-content {
+      border-radius: 0px;
+      overflow: auto;
+}
+
+/**
+ * UPLOAD MODAL.
+ */
+.upload-form input[type="submit"] {
+	padding: 10px 15px;
+}
+
+.upload-form .glyphicon {
+	font-size: 40px;
+}
+
+.file-upload {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	border-radius: 0;
+	border: 0;
+	background-color: #FF1C32;
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.file-upload:hover {
+	background-color: #FF565F;
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.upload-form .input-field {
+	padding: 0 10px;
+}
+
+.file-upload input.upload {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 40px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+.input-label {
+	text-align: center;
+	margin-top: 8px;
+}
+
+#clear-picture-preview {
+	color: #000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 5px;
+	background-color: rgba(255, 255, 255, 0.5);
+	cursor: pointer;
+	z-index: 300;
+}
+
+#clear-picture-preview:hover {
+	color: red;
+}
+
+#image-preview img {
+	width: 100%;
+	max-height: 100%;
+}
+
+#image-preview {
+	width: 100%;
+}
+
+.display-when-ready {
+	position: relative;
+	display: none;
+}
+
+#upload-button {
+    position: absolute;
+	bottom: 0;
+	right: 0;
+
+	width: 20%;
+	height: 100%;
+
+	border: 0;
+	outline: 0;
+
+	background: #0a8;
+	border: none;
+	border-bottom: 2px solid #086;
+	font-weight: bold;
+	color: #fff;
+	font-size: 125%;
+
+	z-index: 1000;
+}
+
+.minorError {
+	position: absolute;
+	font-size: 20px;
+}
+
+.status-message {
+	text-align: center;
+	font-family: Calibri;
+}
+
+.status-message h2 {
+	margin-bottom: 20px;
+}
+
+textarea {
+	width: 98%;
+	height: 98%;
+	display: block;
+	outline: none;
+	padding: 1%;
+	border: 0;
+	border-top: 1px solid #ddd;
+}
+
+textarea:active, textarea:focus {
+	outline: none;
+}
+
+.image-comment {
+	height: 80px;
+	position: relative;
+}
+
+
+
+/* upload buttons */
+
+.upload-container {
+	display: inline-block;
+	position: relative;
+}
+
+.upload-choices {
+	display: inline-block;
+	vertical-align: top;
+
+	padding-top: 10px;
+}
+
+.upload-button {
+	display: inline-block;
+	text-align: center;
+	margin: 0 10px;
+}
+
+.inputfile {
+	/**
+	 * display: none or visibility: hidden will not work here.
+	 * The reasons are: the input value will not be sent to the
+	 * server on form submit; the input will be excluded out of tab order
+	*/
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputlabel {
+	font-size: 1.25em;
+    font-weight: 700;
+    color: #fff;
+    display: inline-block;
+	cursor: pointer;
+}
+
+.inputlabel .fa { margin-top: 5px; }
+
+.inputlabel:hover .upload-icon,
+.inputlabel:focus .upload-icon {
+	background-color: #722040;
+}
+
+.upload-icon {
+	width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #d3394c;
+    display: block;
+    padding: 20px;
+    margin: 0 auto 0px;
+}
+
+.hint-block {
+	display: block;
+	font-family: 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+label * {
+	pointer-events: none;
+}
+
+
+/**
+ * Media queries.
+ */
+@media screen and (max-height: 600px) {
+	.bar:nth-child(2) { display: none; }
+	.row-posts { height: 100%; }
+}
+
+@media screen and (max-width: 600px) {
+	.main-menu h1
+	{
+		font-size: 24px;
+	}
+
+	.sport-info
+	{
+		display: none;
+	}
+
+	.m_arrow_back
+	{
+		font-size: 20px;
+	}
+}
+
+.camera, .video {
+	display: none;
+}
+
+/* hide the camera and video upload button on laptop/desktop screens */
+@media screen and (max-width: 1300px) {
+		.camera, .video {
+			display: inline-block;
+		}
+}
+
+@media screen and (min-width: 1200px)
+{
+	.comments-view::-webkit-scrollbar
+	{
+		background: #fff;
+		width: 8px;
+		height: 0px;
+	}
+	
+	.comments-view::-webkit-scrollbar-thumb
+	{
+		background: #26a5bf;
+		border-radius: 10px;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.modal-dialog {
+		width: 100%;
+		min-height: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	.modal-content {
+		width: 100%;
+		border-radius: 0;
+	}
+
+	.upload-form .input-field {
+		padding: 10px;
+	}
+
+	.scrollOn {
+		/* we don't need the scroll button on mobile and tablets, it has swipe */
+		display: none;
+	}
+
+	.minorError {
+		font-size: 18px;
+	}
+
+}

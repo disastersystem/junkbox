@@ -1,0 +1,237 @@
+/* MAIN-MENU */
+.main-menu {
+	background-color: #fff;
+	color: #000;
+    width: 100%;
+    padding: 0;
+	z-index: 500;
+}
+
+.navCustom /* UL */
+{
+	display: block;
+	background: #fff;
+	margin: 0px;
+	border-top:	1px solid #ddd;
+	box-shadow:	0 12px 50px hsla(0,0%,25%,.1);
+	z-index: 101; /* I got 99 problems that I fixed with `z-index: 101;` */
+}
+
+	.navCustom li
+	{
+		display: inline-block;
+		text-align: center;
+		font-variant: small-caps;
+		font-weight: 600;
+		padding: 10px 0;
+		font-size: 18px;
+		cursor: pointer;
+		color: #333;
+		letter-spacing: 1px;
+	}
+
+		.navCustom li > i
+		{
+			font-variant:normal;
+		}
+
+		.navCustom li:nth-child(1){ border-right: 1px solid #ddd; }
+
+		.navCustom li:hover
+		{
+			color: #0ac;
+		}
+
+	#navArrow
+	{
+		position: absolute;
+		left: 25%;
+		top: 100%;
+		margin-top: -1px;
+		border: solid transparent;
+		border-top-color: #fff;
+		border-width: 12px;
+
+		margin-left: -10px;		/* This helps, random cheat */
+	}
+
+/*---------------------------------------------------------------------------*/
+
+.home-link {
+	color:#fff;
+	display: inline-block;
+	padding: 10px;
+	text-align: left;
+}
+
+.home-link img {
+	margin-bottom: 15px;
+	height: 50px;
+}
+
+.main-menu h1.main-menu-h1 {
+	margin: 0;
+	color: #000;
+	font-weight: 400;
+}
+
+@media (max-width: 768px) {
+	.home-link img {
+		margin-bottom: 10px;
+		height: 30px;
+	}
+
+	.main-menu-h1 {
+		font-size: 22px;
+		font-weight: bold;
+	}
+}
+
+/* MENU-ICON */
+div.menu-icon {
+    text-align: right;
+}
+.fa.fa-user {
+    font-size: 40px;
+    padding-top: 10px;
+	padding-right: 10px;
+}
+
+/*menu icon link style*/
+.menu-icon {
+	/*color: #A13916;*/
+	/*color: #BF471F;*/
+	/*color: #E0672B;*/
+	color: #29a;
+	/*color: #D94709;*/
+	text-decoration: none;
+}
+a.menu-icon {
+	text-align: right;
+	padding-right: 10px;
+}
+.menu-icon:hover, .menu-icon:active, .menu-icon:focus {
+	/*color: #BF4230;*/
+	/*color: #D1591D;*/
+	color: #29a;
+	/*color: #A13916;*/
+	text-decoration: none;
+}
+
+.menu-icon .profile-img {
+    border-radius: 50%;
+	height: auto;
+	width: 50px;
+    margin-top: 10px;
+	margin-bottom: 10px;
+	/*border: 3px solid #BF471F;*/
+}
+
+.main-menu p {
+	text-align: right;
+}
+
+/* LOGIN AND REGISTER MODAL */
+ul.nav-tabs li h5 {
+	/*color: #BF471F;*/
+	/*color: #D1591D;*/
+	color: #29a;
+	font-weight: bold;
+}
+div.login-body .username, div.login-body .password,
+div.register-body .username, div.register-body .password {
+    padding-top: 10px;
+}
+
+.login-body input, .register-body input {
+    margin-top: 5px;
+    border-radius: 0;
+}
+
+.login-footer button, .register-footer button {
+    border-radius: 0;
+    color: #fff;
+    /*background-color: #29a;*/
+	background-color: #555;
+    width: 100%;
+}
+
+.login-footer button:hover, .register-footer button:hover {
+    background-color: #666;
+	/*background-color: #158696;*/
+    color: #fff;
+}
+/* /LOGIN AND REGISTER MODAL */
+
+/* error message */
+.errorMessages {
+    padding: 10px 15px;
+}
+
+/**************************************************/
+
+/* MAIN-MENU-SUB */
+div.main-menu-sub {
+	/*background-color: #FF4E42;*/
+	background: #f9f9f9;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	color: #000;
+    width: 100%;
+}
+div.main-menu-sub div {
+	margin: 0;
+	padding: 10px;
+    text-align: center;
+	font-variant: small-caps;
+	font-weight: 600;
+	font-family: tahoma;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+/*border bet|een home and statistics*/
+div.menu-sub-icon-home {
+
+}
+div.menu-sub-icon-trophy {
+    border-left: 1px #ddd solid;
+}
+
+/*icon sizes*/
+div.main-menu-sub i.fa-home {
+    font-size: 20px;
+}
+div.main-menu-sub i.fa-trophy {
+    font-size: 20px;
+}
+
+/*sub menu link style*/
+.main-menu-sub .menu-sub-open a {
+	color: #fff;
+	text-decoration: none;
+}
+.main-menu-sub .menu-sub-open a:hover {
+	color: rgb(51, 170, 170);
+	text-decoration: none;
+}
+a.arrow2 div {
+	color: rgb(51, 170, 170);
+}
+
+/*sub menu arrow*/
+.main-menu-ul > li.menu-sub-open > div.menu-sub > a.arrow2::after {
+	border: solid transparent;
+	border-top-color: #555;
+	border-width: 10px;
+	content: " ";
+	position: absolute;
+	left: 50%;
+	margin-left: -10px;
+}
+/**************************************************/
+
+/* CONTENT */
+.content div {
+	padding: 50px;
+}

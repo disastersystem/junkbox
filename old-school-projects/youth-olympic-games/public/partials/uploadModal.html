@@ -1,0 +1,69 @@
+<div class="modal" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Make a post in: Snowboard Finale</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<form action="API/create/uploadMedia.php" method="post" enctype="multipart/form-data" class="upload-form" id="upload-form">
+						<div class="row">
+							<div class="col-sm-4 col-xs-4 input-field">
+								<div class="file-upload btn">
+									<span class="glyphicon glyphicon-camera"></span>
+									<input id="take-picture" class="upload" type="file" name="camera[]" accept="image/*" capture>
+								</div>
+								<div class="input-label">Take a picture</div>
+							</div>
+
+							<div class="col-sm-4 col-xs-4 input-field">
+								<div class="file-upload btn">
+									<span class="glyphicon glyphicon-facetime-video"></span>
+									<input id="take-video" class="upload"type="file" name="video[]" accept="video/*" capture>
+								</div>
+								<div class="input-label">Record a video</div>
+							</div>
+
+							<div class="col-sm-4 col-xs-4 input-field">
+								<div class="file-upload btn">
+									<span class="glyphicon glyphicon-picture"></span>
+									<input id="upload-media" class="upload" type="file" accept="image/*" name="media[]">
+								</div>
+								<div class="input-label">Upload media</div>
+							</div>
+						</div>
+
+						<div class="status-message"></div>
+
+						<div id="wait-for-image">
+							<div class="row preview-container" style="padding: 0; margin: 0;">
+								<img id="picture-preview">
+								<div id="clear-picture-preview">
+									<span class="glyphicon glyphicon-remove"></span>
+								</div>
+								<div class="row image-comment">
+									<textarea class="image-caption" name="image-caption" placeholder="What's up?"></textarea>
+								</div>
+							</div>
+
+							<div class="row submit-button-container">
+								<input type="submit" value="submit" class="btn btn-success upload-button" style="margin-top: 20px;">
+							</div>
+						</div>
+
+					</form>
+				</div>
+
+				<div class="row"></div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- Catches the selected file and displays it on the page -->
+<script src="js/camera.js"></script>
+<script src="js/uploadMediaAjax.js"></script>

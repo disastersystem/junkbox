@@ -1,0 +1,350 @@
+
+.headerDate
+{
+	font-size: 	125%;
+	
+	color:		#aaa;
+	text-align:	center;
+	padding: 	15px 0;
+
+	margin-bottom: 2%;
+	font-variant: small-caps;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 1px;
+}
+
+	.headerNr
+	{
+		font-size: 150%;
+		
+		display: block;
+		margin-bottom: -8px;
+		font-family: 'Montserrat', sans-serif;
+		letter-spacing: 1px;
+	
+	}
+
+.eventsContainer		/* UL */
+{
+	overflow-y: 	none;
+	overflow-x: 	none;
+	margin: 		0;
+	padding-top:	20px;
+}
+
+.events li
+{
+	position: relative;
+	background: #29a;
+	-webkit-box-shadow:	0 4px #078;
+	-moz-box-shadow:	0 4px #078;
+	box-shadow:	0 4px #078;
+
+	display: inline-block;
+	width: 30.5%;
+	height: 150px;
+	margin: 2%;
+	margin-right: 0;
+	
+
+	background-repeat: 	no-repeat;
+	background-position:5% 95%;
+	background-size: 	64px 64px;
+	
+	-webkit-box-shadow: inset 100px 0 hsla(0,0%,0%,.1), 0 4px #078;
+	-moz-box-shadow: 	inset 100px 0 hsla(0,0%,0%,.1), 0 4px #078;
+	box-shadow: 		inset 100px 0 hsla(0,0%,0%,.1), 0 4px #078;
+	
+	-webkit-transition: opacity .4s;
+}
+
+	.events li:hover
+	{
+		opacity: .75;
+		cursor: pointer;
+	}
+	
+	.regStartTime
+	{
+		font-size: 150%;
+		color: #fff;
+		padding: 20px;
+	}
+	
+	.progBG
+	{
+		position: 		absolute;
+		left: 			15px;
+		top:			15px;
+		width:			120px;
+		height: 		120px;
+		background: 	#aacccc;
+		border-radius: 	50%;
+		
+	}
+		
+		.event
+		{
+			position: 			absolute;
+			background: 		#f6ffff;
+			top:				4px;
+			left:				4px;
+			border-radius: 		100%;
+			width: 				112px;
+			height: 			112px;
+			
+			z-index: 			10;
+			
+		}
+			
+			.clockText
+			{
+				font-size: 100%;
+				color: #aaa;
+				text-align: center;
+				margin-top: 25px;
+				font-variant: small-caps;
+				font-family: 'Montserrat', sans-serif;
+				letter-spacing: 1px;
+			}
+			
+			.clock
+			{
+				
+				text-align: center;
+				font-size: 175%;
+				color: #666;
+				letter-spacing:	1px;
+
+			}
+			
+			.seconds
+			{	
+				text-align: center;
+				color: #aaa;
+			}
+	
+		.progRad
+		{
+			position: 		absolute;
+			left:			-1px;
+			top:			-1px;
+			width: 			122px;
+			height: 		122px;
+			border-radius: 	100%;
+		
+			background: #377;
+			
+			
+			-webkit-transform: rotate(225deg);
+			-moz-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+		}
+		
+	/* .infoBox
+	{
+		position: relative;
+		margin: 0;
+	}	 */
+		.title
+		{
+			position: 		absolute;
+			bottom:			0%;
+			right:			0%;
+			font-size:		150%;
+			letter-spacing:	1px;
+			
+			padding:		10px;
+			border-radius:	0 0 0 5px;
+			color:			#fff;
+			
+			overflow:		hidden;
+			
+			letter-spacing: 2px;
+			word-spacing:	-2px;
+			font-variant: 	small-caps;
+			
+		}
+	
+		
+		.eventStatus
+		{
+			position: 	absolute;
+			top:		15%;
+			right: 		15%;
+			color: 		#fff;
+			font-size:	120%;
+		}
+		
+		.teams
+		{
+			position: 	absolute;
+			top:		32%;
+			right: 		15%;
+			color: 		#fff;
+		}
+		
+		.location
+		{
+			position: 	absolute;
+			top:		50%;
+			right: 		15%;
+			color: 		#fff;
+		}
+		
+			.fa-map-marker	/* Geotag icon */
+			{
+				font-size: 20px;
+				padding-left: 2px;
+				transform: rotate(15deg);
+				text-shadow: 1px 1px #446F75;
+			}
+		
+		
+/*ScrollBar:*/
+
+	.events::-webkit-scrollbar
+	{
+	  width: 10px;  
+	}
+	
+		
+		
+		
+
+/*---------------------------------------------------------------------------*/
+/*							M E D I A   Q U E R Y		  					 */
+/*---------------------------------------------------------------------------*/	
+@media (max-width: 1500px) 	
+{
+	/*ScrollBar:*/
+
+	.events::-webkit-scrollbar
+	{
+	  width: 1px;  
+	}
+}
+
+@media (max-width: 1200px) 	
+{
+
+.events li
+{
+	padding: 20px;
+	padding-bottom: 40px;
+}
+	
+	.regStartTime
+	{
+		padding: 0;
+	}
+	
+	.progBG
+	{
+		left: 			2%;
+		top:			10px;
+		width:			90px;
+		height: 		90px;
+		border-radius: 	50%;
+	}
+		
+		.event
+		{
+			background-size: 48px 48px;
+			top:			2px;
+			left:			2px;
+			width: 			86px;
+			height: 		86px;
+
+		}
+		
+		.progRad
+		{
+			width: 			92px;
+			height: 		92px;
+		}
+
+	
+	.eventStatus
+	{
+		font-size: 100%;
+	}
+	
+	.teams
+	{
+		font-size: 90%;
+	}
+	
+	.location
+	{
+		font-size: 90%;
+	}
+	
+	.clock
+	{
+		font-size: 130%;
+	}
+	
+	.clockText
+	{
+		font-size: 90%;
+		margin-top: 18px;
+	}
+	
+	.seconds
+	{
+		font-size: 90%;
+	}
+	
+}		
+
+@media (max-width: 1070px) 	
+{
+
+.events li
+{
+	width: 47%;
+}
+
+
+	
+	.eventStatus
+	{
+		font-size: 90%;
+	}
+	
+	.teams
+	{
+		font-size: 90%;
+	}
+	
+	.location
+	{
+		font-size: 90%;
+	}
+	
+	.clock
+	{
+		font-size: 120%;
+	}
+	
+	.clockText
+	{
+		font-size: 90%;
+	}
+	
+	.seconds
+	{
+		font-size: 90%;
+	}
+	
+}		
+
+@media (max-width: 700px) 	
+{
+
+	.events li
+	{
+		width: 96%;
+	}
+}		

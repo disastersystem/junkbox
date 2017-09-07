@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+    <head>
+        <title>[]</title>
+        <meta charset="utf-8" />
+    	<meta name="format-detection" content="telephone=no" />
+    	<meta name="msapplication-tap-highlight" content="no" />
+    	<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+
+        <!-- our css -->
+        <link rel="stylesheet" href="css/font-awesome-4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/game.css">
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/HUD.css">
+        <link rel="stylesheet" href="css/dialog.css">
+
+        <!-- jquery -->
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery-ui/jquery-ui.min.js"></script>
+        <!-- converts jquery drag and drop events from mouse to touch on mobile -->
+        <script src="js/drag-and-drop-touch.js"></script>
+
+        <!-- our js -->
+        <script src="js/audio.js"></script>
+
+        <script src="js/helpers.js"></script>
+        <script src="js/database.js"></script>
+        <script src="js/game.js"></script>
+        <script src="js/calcGameLayout.js"></script>
+        <script src="js/initDialog.js"></script>
+		<script src="js/buttonHandler.js"></script>
+    </head>
+    <body>
+        <div id="content">
+            <div id="HUD">
+                <div id="levelNr"></div>
+                <div id="timer"></div>
+				<div id="pause">&#10074;&#10074;</div>
+			</div>
+            <div id="cardPile" class="cards"></div>
+            <div id="cardSlots" class="cards"></div>
+
+            <!-- overlay displayed when game is over -->
+            <div id="successMessage">
+				<div class="endGameMsg">level cleared</div>
+
+				<div class="timeRemain">0</div>
+				<div class="score">0</div>
+
+                <div class="options">
+                    <div class="row">
+                        <button class="playAgain menuBtns" onclick="initGame()">
+                         <span class="scale">retry<i class="btnIcon fa fa-repeat"></i></span>
+                        </button>
+                    </div>
+
+                    <button class="nextLevel menuBtns" onclick="nextLevel()">
+                        <span class="scale">next level<i class="btnIcon fa fa-arrow-right"></i></span>
+                    </button>
+
+                    <div class="row">
+                        <div class="exit">
+                            <a href="index.html">
+                                <button class="quit menuBtns">
+                                    <span class="scale">quit<i class="btnIcon fa fa-power-off"></i></span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+		<div id="fillBG"></div>
+
+		<div class="dialogPause dialog">
+			<div class="dialogBox">
+				<div class="dialogTitle">
+                    paused
+                </div>
+				
+                <div class="dialog-btn" role="resume">
+                    resume<i class="btnIcon fa fa-play"></i>
+                </div>
+
+				<div class="dialog-btn" role="retry" onclick="initGame();">
+                    retry<i class="btnIcon fa fa-repeat"></i>
+                </div>
+
+				<a href="index.html">
+                    <div class="dialog-btn" role="quit">
+                        quit<i class="btnIcon fa fa-power-off"></i>
+                    </div>
+                </a>
+			</div>
+		</div>
+
+        <!-- phonegap stuff -->
+        <script type="text/javascript" src="cordova.js"></script>
+    	<script type="text/javascript" src="js/index.js"></script>
+    	<script type="text/javascript">
+    		app.initialize();
+    	</script>
+    </body>
+</html>

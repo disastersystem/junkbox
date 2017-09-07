@@ -1,0 +1,45 @@
+@font-face {
+    font-family: cartoon;
+    src: url(../font/BD_Cartoon_Shout.ttf);
+}
+
+#HUD {
+	background: hsla(0,0%,100%,.5);
+	height: 60px;
+}
+
+#pause {
+	position: 		absolute;
+	top:			.8%;
+	right:			2%;
+	text-align:		center;
+	background: 	#c077d3;
+	border:			2px solid #b067c3;
+	border-radius:	5px;
+	font-size:		200%;
+	width:			40px;
+	height:			40px;
+	line-height:	40px;
+	color:			#fff;
+	cursor:			pointer;
+}
+
+#timer {
+	font-size:		200%;
+	font-family: 	cartoon;
+	color: 			#0ac;
+	display: 		none;
+	position: 		absolute;
+	top:			1.5%;
+	left:			45%;
+}
+	
+#levelNr {
+	font-size: 		100%;
+	font-family: 	cartoon;
+	color: 			#fff;
+	text-shadow:	0 0px 4px #068, 0 2px #08a;
+	position: 		absolute;
+	top:			1.5%;
+	left:			2%;
+}

@@ -1,0 +1,84 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+	text-decoration:	none;
+	font-family: 'Lato', sans-serif;
+}
+
+/*---------------------------------------------------------------------------*/
+
+body
+{
+	position: relative;
+	width: 100%;
+	/* background: url('../img/bgFrontpage3.png');
+	background-size: cover; */
+	background-color: #e8eeef;
+}
+
+
+/*---------------------------------------------------------------------------*/
+
+
+/*---------------------------------------------------------------------------*/
+/*						   ERROR MSG
+/*---------------------------------------------------------------------------*/
+
+.minorError
+{
+	font-size: 		200%;
+	text-align: 	center !important;
+	width:			100%;
+	font-family: 	tahoma;
+	font-weight:	bold;
+	color: 			#babbbf;
+	margin-top: 	20%;
+}
+
+/*---------------------------------------------------------------------------*/
+/*						   L O A D I N G
+/*---------------------------------------------------------------------------*/
+
+.loadingWrapper
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #333;
+	z-index: 10;
+}
+
+	.loadingMsg
+	{
+		font-size: 300%;
+		color: #fff;
+		text-align: center;
+		margin-top: 5%;
+		z-index: 1002;
+	}
+	
+#frontpageContainer
+{
+
+	
+}	
+	
+/*---------------------------------------------------------------------------*/
+/*							M E D I A   Q U E R Y		  					 */
+/*---------------------------------------------------------------------------*/	
+
+@media (max-width: 1200px) 	
+{
+	body
+	{
+		-webkit-user-select: none;  /* Chrome all / Safari all */
+		-moz-user-select: none;     /* Firefox all */
+		-ms-user-select: none;      /* IE 10+ */
+		user-select: none;          /* Likely future */   
+	}
+}
+
+

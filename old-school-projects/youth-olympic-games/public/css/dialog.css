@@ -1,0 +1,44 @@
+
+.customDialog
+{
+	position: absolute;
+	
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	display: none;
+	
+	padding: 50px 30px;
+	background: #0e4659;
+	color: #fff;
+	
+	z-index: 2000;
+}
+
+	.dialogTitle
+	{
+		text-align: center;
+		padding: 	10px;
+	}
+
+	.customDialog input
+	{
+		padding: 		10px 20px;
+		font-size: 		125%;
+		color: 			#fff;
+		border-radius: 	5px;
+		text-align: 	center;
+	}
+	
+		.customDialog input[role=cancel]
+		{
+			background: hsla(195,50%,40%,.5);
+			border:		2px solid hsla(195,50%,20%,.5);
+		}
+		
+		.customDialog input[role=confirm]
+		{
+			background: #fc6771;
+			border:		2px solid #e05c64;
+		}
+	

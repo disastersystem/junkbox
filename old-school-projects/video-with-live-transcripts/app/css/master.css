@@ -1,0 +1,308 @@
+html, body {
+	font-family: 'Play', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding-bottom: 200px; /* make sure content doesn't get mashed at the bottom */
+}
+
+input, select {
+	font-family: 'Play', sans-serif;
+}
+
+a.selected {
+	border-bottom: 3px solid #FF9900;
+}
+
+select {
+	font-size: 18px;
+}
+
+h1, h2, h3 {
+	letter-spacing: 1.5px;
+	text-align: center;
+	font-weight: 600;
+}
+
+video {
+	width: 60%;
+}
+
+#content-wrapper {
+	max-width: 1000px;
+	margin: 50px auto;
+}
+
+.master-header {
+	padding: 30px 0;
+	margin-bottom: 20px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+}
+
+.master-header a {
+	padding: 10px 40px;
+	text-decoration: none;
+}
+
+/*-----------------------
+	mobile navigation
+-----------------------*/
+#mobile-header {
+	padding: 20px;
+	border-bottom: 1px solid #ccc;
+	display: none;
+}
+
+#nav-button {
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+}
+
+#nav-button span, #nav-button span:before, #nav-button span:after {
+	content: "";
+	display: block;
+	height: 2px;
+	width: 100%;
+	background: #333;
+	position: relative;
+	transition: all 0.2s ease-in-out;
+}
+
+#nav-button span:before {
+	top: 15px;
+}
+
+#nav-button span:after {
+	bottom: 17px;
+}
+
+#nav-button.open span {
+	background-color: transparent;
+}
+
+#nav-button.open span:before,
+#nav-button.open span:after {
+	transform-origin: center;
+	transform: rotate(45deg);
+	top: 0;
+}
+
+#nav-button.open span:before {
+	transform: rotate(-45deg);
+}
+
+#mobile-nav {
+	position: absolute;
+	border-bottom: 1px solid #ddd;
+	width: 100%;
+	padding: 30px 0;
+	background: #fff;
+	display: none;
+	transform: translateY(-100%);
+	transition: all 3s ease-in-out;
+}
+
+#mobile-nav.open {
+	display: block;
+	transform: translateY(0%);
+}
+
+#mobile-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#mobile-nav ul li {
+	padding: 20px;
+	text-align: center;
+}
+
+@media (max-width: 1000px) {
+	#mobile-header {
+		display: flex;
+	}
+	.master-header {
+		display: none;
+	}
+}
+
+
+/*----------------
+	form stuff
+----------------*/
+
+.form {
+	width: 250px;
+	margin: 50px auto;
+}
+
+label {
+	display: block;
+	margin: 20px 0 6px 0;
+}
+
+input[type="text"], input[type="password"] {
+	width: 228px;
+	margin: 0;
+	border: 1px solid #ccc;
+	padding: 10px;
+	outline: none;
+	font-size: 18px;
+}
+
+input[type="submit"] {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	padding: 10px;
+	cursor: pointer;
+	font-family: 'Play', sans-serif;
+	font-size: 18px;
+}
+
+.submit-button {
+	padding: 15px;
+	margin-top: 15px;
+	font-family: 'Play', sans-serif;
+}
+
+input[type="submit"]:hover {
+	background-color: #FF9900;
+	border-color: #FFB247;
+	color: #fff;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+	border-color: #749DE0;
+}
+
+.message {
+	width: 500px;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+	padding: 20px;
+	text-align: center;
+}
+
+.ajaxMessageContainer {
+	z-index: 900; /* make sure this displays over other popups/modals */
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+	/* center */
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+.error {
+	text-align: center;
+}
+
+.ajax-success-message {
+	background-color: #39B544;
+	padding: 20px;
+	color: #fff;
+}
+
+.ajax-error-message {
+	background-color: #FF4949;
+	padding: 20px;
+	color: #fff;
+}
+
+/*--------------------
+	table styling
+--------------------*/
+
+table {
+	margin: 50px auto;
+	border-spacing: 0;
+	border: none;
+}
+
+th {
+	font-size: 20px;
+	padding: 15px 20px;
+	text-align: left;
+}
+
+tr { border: 1px solid #ddd; }
+
+td {
+	padding: 20px 25px;
+	border-bottom: 1px solid #ddd;
+}
+
+td a {
+	color: #000;
+}
+
+/*------------------
+	video layout
+------------------*/
+form.video-title-form {
+	margin-bottom: 10px;
+	width: 100%;
+	height: 40px;
+	display: flex;
+}
+
+input.video-title-input {
+	width: 90%;
+	margin: 0;
+	display: inline-block;
+}
+
+input.update-title-button {
+	width: 10%;
+	padding: 13px 20px;
+	margin: 0;
+	border-left: 0;
+	outline: 0;
+	display: inline-block;
+}
+
+div.meta-data {
+	display: flex;
+	flex-direction: column;
+}
+
+.add-transcript-button {
+	padding: 15px 20px;
+	border: 1px solid #bbb;
+}
+
+.fullscreen-element {
+	z-index: 10;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	overflow: auto;
+	background-color: #fff;
+}
+
+/*------------------
+	search menu
+------------------*/
+
+.search-menu-container {
+	display: flex;
+	justify-content: center;
+}
+
+.search-menu {
+	border: 1px solid #ddd;
+	padding: 8px;
+	display: inline-block;
+}

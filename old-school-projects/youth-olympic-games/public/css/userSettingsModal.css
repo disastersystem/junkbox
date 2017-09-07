@@ -1,0 +1,152 @@
+.modalEditUser .modal-body {
+	background-color: #fff;
+}
+
+.modalEditUser .modal-header {
+	border-bottom: 1px solid #ccc;
+}
+
+.passwordContainer
+{
+	margin: 2% auto;
+}
+
+	.passwordContainer input[type="password"]
+	{
+		display: block;
+		padding: 15px;
+		width: 90%;
+		margin: 5px auto;
+		border: 1px solid #ddd;
+		background: #fff;
+	}
+
+	.passwordContainer label
+	{
+		margin: 1.5% 0 0 5%;
+	}
+
+	.passwordContainer input[role=conPwd]
+	{
+		opacity: .5;
+	}
+
+	.correctPwd
+	{
+		background: #61c685 !important;
+		border:		2px solid #61b685 !important;
+		color:		#fff;
+	}
+
+	.badPwd
+	{
+		background: #fc6771 !important;
+		border:		2px solid #ec6771 !important;
+	}
+
+
+
+.saveSettings 			/* Save Button */
+{
+
+	background: #0a8;
+	border: none;
+	border-bottom: 2px solid #086;
+	font-weight: bold;
+	color: #fff;
+	font-size: 125%;
+	padding: 10px 25px;
+	display: inline-block;
+}
+
+
+.change-picture-button {
+    background: #0a8;
+	border: none;
+	border-bottom: 2px solid #086;
+	font-weight: bold;
+	color: #fff;
+	font-size: 125%;
+	padding: 10px 25px;
+}
+
+
+/* upload buttons */
+
+.upload-container {
+	display: inline-block;
+	position: relative;
+}
+
+.upload-choices {
+	display: inline-block;
+	vertical-align: top;
+
+	padding-top: 10px;
+}
+
+.upload-button {
+	display: block;
+	text-align: center;
+	margin-right: 8px;
+}
+
+.inputfile {
+	/**
+	 * display: none or visibility: hidden will not work here.
+	 * The reasons are: the input value will not be sent to the
+	 * server on form submit; the input will be excluded out of tab order
+	*/
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputlabel {
+	font-size: 1.25em;
+    font-weight: 700;
+    color: #fff;
+    display: inline-block;
+	cursor: pointer;
+}
+
+.inputlabel .fa { margin-top: 5px; }
+
+.inputlabel:hover .upload-icon,
+.inputlabel:focus .upload-icon {
+	background-color: #722040;
+}
+
+.upload-icon {
+	width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: #d3394c;
+    display: block;
+    padding: 15px;
+    margin: 0 auto 10px;
+}
+
+.hint-block {
+	display: inline-block;
+	font-family: 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+label * {
+	pointer-events: none;
+}
+
+/* preview */
+
+.preview-window {
+	display: inline-block;
+	vertical-align: top;
+	height: 150px;
+    width: 150px;
+
+    border-radius: 50%;
+    overflow: hidden;
+}
