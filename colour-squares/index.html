@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>title goes here</title>
+		<title>[]</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,6 +17,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.5.3/svg.js"></script>
 		<script src="svg.draggable.js"></script>
 		<script src="functions.js"></script>
+		<!-- <script type="module" src="test.js"></script> -->
 
 		<script>
 			var game = new Chess()
@@ -51,8 +52,9 @@
 		    for (var key in pos) {
 		        if (pos.hasOwnProperty(key)) {
 		            var p = SVG.get(key).bbox()
+		            var path = 'pieces/' + pos[key] + '.svg'
 
-		            var piece = board.image('pieces/' + pos[key] + '.svg', 60, 60)
+		            var piece = board.image(path, 60, 60)
 		                .move(p.cx - 30, p.cy - 30)
 		                .attr({ id: pos[key], class: 'piece'})
 
@@ -61,6 +63,11 @@
 						var thePiece = this
 						
 						squares.forEach(function(square) {
+
+							/**
+							 * TODO: CENTER MOUSE ON PIECE WHEN DRAGGING
+							 * Lichess centers the piece at the mouse, this might be better from a usability perspective
+							 */
 							
 							var pieceCenterX = Math.floor(event.detail.p.x)
 							var pieceCenterY = Math.floor(event.detail.p.y)
@@ -73,16 +80,17 @@
 
 							var legal = false
 
-							// if the coords is inside the current square this loop is at
+							// if the coords is inside the current square that this loop is at
 							if ( ( (pieceCenterX > leftPoint) &&  (pieceCenterX < rightPoint) ) && ( (pieceCenterY > topPoint) &&  (pieceCenterY < bottomPoint) ) )
 							{
 								game.moves().forEach(function(move) {
-									var pieceCode = thePiece.node.id.slice(-1)
+									var pieceCode  = thePiece.node.id.slice(-1)
 									var squareCode = square.node.id
-									var userMove = (pieceCode == 'P') ? squareCode : (pieceCode + squareCode)
+									var userMove   = (pieceCode == 'P') ? squareCode : (pieceCode + squareCode)
 									
 									if ( userMove == move ) {
 										legal = true
+										console.log(pieceCode)
 										console.log(userMove)
 										console.log(move)
 
@@ -95,49 +103,56 @@
 									}
 								})
 								
-								// if it is not a legal move send the piece back to its original square
+								// if it is not a legal move
 								if (legal == false) {
+									// send the piece back to its original square
 									thePiece.move(
 										event.detail.handler.startPoints.box.x,
 										event.detail.handler.startPoints.box.y
 									)
 								}
-								
 							}
+							
 						})
 
+						// emit event to let the square color function to re-evaluate
+
+						// if 1 piece attacking = 0.1 opacity, if 2 0.2 opacity...
+						// use heatmap color coding
 					})
 
 					pieces.push(piece)
 		        }
 		    }
 
+			function rgb(minimum, maximum, value) {
+				let ratio = 2 * (value - minimum) / (maximum - minimum)
+				
+				let b = Math.floor(Math.max(0, 255 * (1 - ratio)))
+			    let r = Math.floor(Math.max(0, 255 * (ratio - 1)))
+			    let g = Math.floor(255 - b - r)
 
+			    return [r, g, b]
+			}
 
+			let heatmap = [
+				['d2', 5],
+				['d5', 1],
+				['a3', 0]
+			]
 
+			// heatmap.forEach(function(map) {
+			// 	var colors = rgb(1, 10, map[1])
+			// 	var r = colors[0]
+			// 	var g = colors[1]
+			// 	var b = colors[2]
 
+			// 	SVG.get(map[0]).attr({
+			// 		fill: 'rgb(' + r + ',' + g + ',' + b + ')'
+			// 	})
 
-
-
-		    // identifiser personlige trekk: hjelper ikke tegne, må gjøre det "visuelt" i hodet
-
-
-
-
-
-
-
-			
-			// array of coords?
-
-			// dragend event fired
-			// 	convert move and square to legal move
-			// 	check board.squares() against game.moves()
-			// 		if match
-			// 			move piece to new sqaure
-			// 		else
-			// 			reset piece back to square
-			// 			event.detail.handler.startPoints.box.x
+			// 	console.log( rgb(1, 100, map[1]) )
+			// })
 		</script>
 	</body>
 </html>

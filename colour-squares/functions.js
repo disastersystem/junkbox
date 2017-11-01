@@ -50,3 +50,25 @@ function fenToPieceCode(piece) {
     // white piece
     return 'w' + piece.toUpperCase()
 }
+
+function gameStatus() {
+    if (game.in_checkmate()) {
+        console.log('checkmate')
+    }
+
+    if (game.in_check()) {
+        console.log('check')
+    }
+
+    if (game.in_draw()) {
+        console.log('draw (50-move rule or insufficient material)')
+    }
+
+    if (game.in_stalemate()) {
+        console.log('stalemated')
+    }
+
+    if (game.in_threefold_repetition()) {
+        console.log('threefold repetition')
+    }
+}
