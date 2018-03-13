@@ -1,11 +1,14 @@
-var COLUMNS = 'abcdefgh'.split('')
 
-// convert FEN string to position object
-// returns false if the FEN string is invalid
+/**
+ * convert FEN string to position object
+ * returns false if the FEN string is invalid
+ */
 function fenToObj(fen) {
     // if (validFen(fen) !== true) {
-    //  return false;
+    //     return false
     // }
+
+    var COLUMNS = 'abcdefgh'.split('')
 
     // cut off any move, castling, etc info from the end
     // we're only interested in position information
@@ -40,7 +43,9 @@ function fenToObj(fen) {
     return position
 }
 
-// convert FEN piece code to bP, wK, etc
+/**
+ * convert FEN piece code to bP, wK, etc.
+ */
 function fenToPieceCode(piece) {
     // black piece
     if (piece.toLowerCase() === piece) {
@@ -51,6 +56,9 @@ function fenToPieceCode(piece) {
     return 'w' + piece.toUpperCase()
 }
 
+/**
+ * 
+ */
 function gameStatus() {
     if (game.in_checkmate()) {
         console.log('checkmate')
@@ -71,4 +79,16 @@ function gameStatus() {
     if (game.in_threefold_repetition()) {
         console.log('threefold repetition')
     }
+}
+
+function occurences(array) {
+    let counts = {}
+
+    array.forEach(function(item) {
+        item = item.slice(-2)
+        
+        counts[item] = (counts[item] || 0) + 1
+    })
+
+    return counts
 }

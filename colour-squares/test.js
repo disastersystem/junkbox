@@ -3,4 +3,4 @@
 import { Board } from './Board.js'
 
 let board = new Board
-console.log( board.getID() )
+console.log( board.drawBoard() )
