@@ -1,4 +1,16 @@
 
+// const squareCodes = [
+    //     'a1', 'b1', 'c1', 'd1', 'e1', 'f1'
+    // ]
+    
+
+/* odd suare gets a light colour, even gets dark */
+// if (row % 2 == 0)
+//     var colour = (column % 2 == 0) ?  '#F0D9B5' : '#B58863'
+// else
+//     var colour = (column % 2 == 0) ? '#B58863' : '#F0D9B5'
+
+
 
 if (move.charAt(0) == 'N') {
 	move = move.substr(1) // effectivly remove the first character
