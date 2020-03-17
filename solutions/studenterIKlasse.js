@@ -14,9 +14,9 @@ fetch('studenter.json')
             radioButton.addEventListener('click', e => {
                 // tøm lista med studenter før vi legger til nye
                 ul.innerHTML = ""
-
+                // iterer igjennom samlingen med alle studentene
                 students.forEach(student => {
-                    // hvis IDen til radioknappen er like studenten sin klasse-forkortelse, eller lik 'all',
+                    // hvis IDen til radioknappen er lik studenten sin klasse-forkortelse, eller lik 'all',
                     // så lag et <li> element og legg til det i <ul> lista
                     if (student.forkortelse == radioButton.id || radioButton.id == 'all') {
                         let li = document.createElement('li')
