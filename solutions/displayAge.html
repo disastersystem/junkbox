@@ -10,14 +10,14 @@
 
     <script>
       function display () {
-        // hent og lagre input elementet så vi kan hente tekst verdien brukeren skriver inn
+        // hent og lagre input elementet så vi kan hente tekstverdien brukeren skriver inn
         let input = document.getElementById('age')
-        // hent elementet som vi vil vise verdien i
+        // hent elementet som vi vil vise tekstverdien i
         let output = document.getElementById('output')
 
-        // input har en variabel/egenskap som heter value, her ligger tekst verdien brukeren skrev inn.
+        // input har en variabel/egenskap som heter 'value', her ligger tekstverdien brukeren skrev inn.
         // La oss vise den i output elementet vi hentet. output har en variabel/egenskap
-        // som heter innerHTML. Vi kan sette/overskrive verdien til denne variablen/egenskapen med
+        // som heter 'innerHTML'. Vi kan sette/overskrive verdien til denne variablen/egenskapen med
         // verdien i input.
         output.innerHTML = input.value
       }
