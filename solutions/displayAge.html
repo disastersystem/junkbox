@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <input type="text" id="age" value="Your Age">
+
+    <h1 id="output"></h1>
+
+    <script>
+      function display () {
+        // hent og lagre input elementet så vi kan hente tekst verdien brukeren skriver inn
+        let input = document.getElementById('age')
+        // hent elementet som vi vil vise verdien i
+        let output = document.getElementById('output')
+
+        // input har en variabel/egenskap som heter value, her ligger tekst verdien brukeren skrev inn.
+        // La oss vise den i output elementet vi hentet. output har en variabel/egenskap
+        // som heter innerHTML. Vi kan sette/overskrive verdien til denne variablen/egenskapen med
+        // verdien i input.
+        output.innerHTML = input.value
+      }
+    </script>
+  </body>
+</html>
