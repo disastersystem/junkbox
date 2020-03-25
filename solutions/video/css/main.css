@@ -1,0 +1,35 @@
+body > div {
+  max-width: 900px;
+  margin: 150px auto;
+  display: flex;
+  height: 350px;
+}
+
+video {
+  width: 600px;
+  background: #000;
+}
+
+#subtitles {
+  height: 350px;
+  width: 300px;
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+  position: relative;
+}
+
+#subtitles ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+}
+
+#subtitles li {
+  padding: 6px 5px;
+}
+
+#subtitles li.active {
+  background-color: #ddd;
+}

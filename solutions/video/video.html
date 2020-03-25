@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Video med teksting</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+  <div>
+    <video id="video" controls preload="metadata">
+      <source src="video/sintel-short.mp4" type="video/mp4">
+      <source src="video/sintel-short.webm" type="video/webm">
+      <track label="English" default kind="subtitles" srclang="en" src="vtt/sintel-en.vtt">
+    </video>
+    <div id="subtitles"></div>
+  </div>
+  <script>
+    const video = document.querySelector('#video')
+    const track = document.querySelector('#video track')
+    const subtitles = document.querySelector('#subtitles')
+    // An actual array is easier to handle than the cue list
+    const cues = []
+
+    // When the text track has been loaded we can access the cues and set up everything
+    track.addEventListener('load', e => {
+      // Do not show subtitles on the video player
+      video.textTracks[0].mode = 'hidden'
+
+      const trackCues = e.target.track.cues
+      // Go through the cue list
+      for (let i=0; i<trackCues.length; i++) {
+        // Add all cues to an array
+        cues.push(trackCues[i])
+      }
+
+      // Show all cues alongside the video
+      showSubtitles()
+
+      // Add data-position attributes that will allow us to figure out how far to scroll later to keep the
+      // cue in the center when the active cue changes
+      addPositionDataAttribute()
+
+      // Add padding so that the active cue is centered
+      addTopAndBottomPadding()
+
+      // Add a click event listener to the subtitle <div>
+      addClickEventSubtitles()
+    })
+
+    // When a cue change event occurs
+    video.textTracks[0].addEventListener('cuechange', (e) => {
+      // Loop over all shown cues, remove class 'active'
+      document.querySelectorAll('#subtitles ul li').forEach(li => {
+        li.classList.remove('active')
+      })
+
+      // Loop over active cues
+      for (let i=0; i<e.target.activeCues.length; i++) {
+        // Add class 'active' to active cues
+        document
+          .querySelector(`#subtitles li[data-id="${e.target.activeCues[i].id}"]`)
+          .classList.add('active')
+      }
+
+      // Do we currently have any active cues?
+      if (e.target.activeCues[0]) {
+        // Get the DOM elements of the active cue list element
+        let currentCue = document.querySelector(`#subtitles li[data-id="${e.target.activeCues[0].id}"]`)
+
+        // get the pixel position of the cue in the unordered list
+        let positionCue = parseInt(currentCue.dataset.position)
+        // scroll the new active cue position to the center of the <ul> list
+        subtitles.scrollTop = positionCue
+      }
+    })
+
+    /**
+     * Takes cues (subtitles) from the global array [cues] and adds them as
+     * list items to an unnumbered list in the subtitles element.
+     */
+    function showSubtitles() {
+      let html = '<ul>'
+      cues.forEach(cue => {
+        html +=
+          `<li data-id="${cue.id}" data-start-time="${cue.startTime}">
+            ${cue.text.nl2br()}
+          </li>`
+      })
+      html += '</ul>'
+      subtitles.innerHTML = html
+    }
+
+    /**
+     * Get all cue list elements from the DOM and find their position (in pixels) in the parent element.
+     * Then add that value to data-position attributes so we can retrieve it later.
+     * We'll use these attributes later to figure out how far we need to scroll to center the newly
+     * active cue.
+     */
+    function addPositionDataAttribute () {
+      // Get all cue list items.
+      document.querySelectorAll('#subtitles ul li').forEach(li => {
+        // offsetTop returns the distance of the current element relative to the top of the parent element
+        li.setAttribute('data-position', li.offsetTop)
+      })
+    }
+
+    /**
+     * Center cue's in the subtitles <div> by adding padding to the top and bottom.
+     */
+    function addTopAndBottomPadding () {
+      // Get the height of the #subtitles <div> which wrappes the <ul> list.
+      // This is basically the "visible window" to the cue <ul> list. The height
+      let subtitlesDivHeight = subtitles.offsetHeight
+
+      // Add padding to the top and bottom of the <ul> list.
+      // The top padding equals half of the subtitlesDivHeight height minus the height of the first list item.
+      // The bottom padding equals half of the subtitlesDivHeight height.
+      // This keeps the active cue's in the center.
+      let ul = document.querySelector('#subtitles ul')
+      ul.style.paddingTop = ((subtitlesDivHeight / 2) - ul.firstChild.offsetHeight) + 'px'
+      ul.style.paddingBottom = ((subtitlesDivHeight / 2)) + 'px'
+    }
+
+    /**
+     * Add a click event listener to the #subtitles <div>.
+     */
+    function addClickEventSubtitles () {
+      // if a cue list item is clicked we want to rewind or forward the video to that timestamp
+      subtitles.addEventListener('click', changeTime)
+    }
+
+    /**
+     * Set the timestamp of the video to the start time specified
+     */
+    function changeTime(e) {
+      let startTime = e.target.getAttribute('data-start-time')
+      // set a new current time on the video
+      video.currentTime = startTime
+    }
+
+    /**
+     * Adds newline to br tag conversion for Strings
+     *
+     * @return String the content of the string with all newline characters replaced by a 'br' tag.
+     */
+    String.prototype.nl2br = function () {
+      return this.replace(/\n/g, "<br/>")
+    }
+  </script>
+</body>
+</html>
