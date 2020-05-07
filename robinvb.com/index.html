@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <link rel="stylesheet" href="lib.css">
+        <link rel="stylesheet" href="style.css">
+
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Skaug & Christoffersen</title>
+    </head>
+    <body>
+
+        <nav>
+            <div class="flex-container">
+                <div class="container">
+                    <div class="info">
+                        <i class="fas fa-phone"></i><span>413 10 999</span>
+                        <span id="divider"> | </span>
+                        <i class="far fa-envelope"></i><span>post@skaugogchristoffersen.no</span>
+                    </div>
+                    <div>
+                        <ul>
+                            <li id="hamburger_menu" onclick="openNav()"><i class="fas fa-bars"></i></li>
+                            <div class="nav_btns">
+                                <a href="index.html"><li class="selected">Hjem</li></a>
+                                <a href="om_oss.html"><li>Om oss</li></a>
+                                <a href="kontakt.html"><li>Kontakt</li></a>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="sidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul>
+                <li><a href='index.html' onclick="closeNav()">Hjem</a></li>
+                <li><a href="om_oss.html" onclick="closeNav()">Om oss</a></li>
+                <li><a href="kontakt.html" onclick="closeNav()">Kontakt</a></li>
+            </ul>
+        </div>
+
+
+        <section>
+            <div class="row flex" id="business-statement">
+                <div class="business-statement">
+                    <h1>Skaug & Christoffersen AS</h1>
+                    <div>
+                        <p class="main_text">
+                            Rørlegger med 10 års erfaring i faget.<br>
+                            Vi prosjekterer og utfører alle typer rørleggeroppdrag<br>i Ringerike, Hole, Jevnaker, Modum og omegn,<br>
+                            med målet å levere til avtalt tid og pris.
+                        </p>
+                        <div class="contact_info">
+                            <div class="flex" id="befaring_text_container">
+                                <p id="befaring_text">
+                                    For en uforpliktende befaring kontakt oss i dag.
+                                </p>
+                            </div>
+                            <div class="flex">
+                                <i class="far fa-envelope"></i>
+                                <p id="epost">post@skaugogchristoffersen.no</p>
+                            </div>
+                            <div class="flex">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <p id="tlf_num">413 10 999</p>
+                                    <p id="aapningstider">08 - 16 hverdager</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <a href="kontakt.html" class="contact-btn">
+                                    Send en forespørsel
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tiles">
+                    <div>
+                        <img src="assets/tiles.svg">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="section flex-container" id="tjenester_section" style="position: relative;">
+                <!-- <img src="assets/tiles-small.svg" style="height: 50px; position: absolute; left: 0; top: 110px;">
+                <img src="assets/drawing-1.svg" style="height: 50px; position: absolute; right: 0; top: 110px;"> -->
+                <h1>Tjenester</h1>
+                <p>
+                    Under ser du en oversikt over typiske oppdrag vi utfører.
+                    <!-- Hvis du lurer på noe ta <a style="color: #0477BF" href="kontakt.html">kontakt</a> for befaring, priser eller<br>
+                    mer informasjon. Legg dette i teksten på toppen på en måte? -->
+                </p>
+                <div class="container">
+
+                    <div class="box flex">
+                        <div class="content flex">
+                            <i class="fas fa-wrench"></i>
+                            <h3>Service</h3>
+                        </div>
+                    </div>
+
+                    <div class="box flex">
+                        <div class="content flex" >
+                            <i class="fas fa-wrench"></i>
+                            <h3>Bad</h3>
+                        </div>
+                    </div>
+
+                    <div class="box flex">
+                        <div class="content flex">
+                            <i class="fas fa-wrench"></i>
+                            <h3>Service av varmeanlegg</h3>
+                        </div>
+                    </div>
+
+                    <div class="box flex">
+                        <div class="content flex">
+                            <i class="fas fa-wrench"></i>
+                            <h3>Varmepumpe</h3>
+                        </div>
+                    </div>
+
+                    <div class="box flex">
+                        <div class="content flex">
+                            <i class="fas fa-wrench"></i>
+                            <h3>Varme og sanitær</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <footer>
+                <div class="flex-container">
+                    <div class="container main_info">
+                        <div class="column">
+                            <p>Skaug & Christoffersen AS</p>
+                            <div>
+                                <i class="fas fa-map-marker-alt"></i>
+                                Vikersundveien 447 3533 TYRISTRAND
+                            </div>
+                            <br>
+                            <div>
+                                Org. nr.&nbsp;&nbsp;923261842
+                            </div>
+                        </div>
+
+                        <div class="column">
+                            <p>Kontakt</p>
+                            <i class="far fa-envelope"></i>post@skaugogchristoffersen.no
+                            <br>
+                            <br>
+                            <i class="fas fa-phone"></i>413 10 999
+                        </div>
+
+                        <div class="column">
+                            <p>Kompetanse</p>
+                            <img height="50" src="assets/Mestermerker.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-container" id="copyright">
+                    <div class="container">
+                        <div>
+                            © 2020 Copyright Skaug & Christoffersen AS <!-- update with js or php? -->
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+
+        <script src="main.js" charset="utf-8"></script>
+    </body>
+</html>

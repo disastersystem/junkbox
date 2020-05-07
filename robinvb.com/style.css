@@ -1,0 +1,672 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:wght@300;400;700;900&display=swap');
+
+/* Defaults */
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+     color: #404040;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 18px;
+    color: #404040;
+}
+
+a {
+    text-decoration: none;
+    color: white; /*black instead?*/
+    user-select: none;
+}
+
+/* i {} default padding? */
+
+section {
+    height: 100%;
+    padding-top: 50px;
+}
+
+
+
+
+
+
+
+
+/* NAVIGATION */
+nav {
+    width: 100%;
+    height: 70px;
+    background: white;
+    color: black;
+    border: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+}
+
+nav .flex-container {
+    /* flex-wrap: wrap; */
+    height: 100%;
+}
+
+nav .container {
+    /* flex-wrap: wrap;
+    flex-flow:row wrap; */
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    height: 100%;
+    margin: 0;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 10px 0 10px;
+    height: 100%;
+    cursor: pointer;
+}
+
+nav li:hover {
+    text-decoration: underline;
+    /* background: #0477BF; */
+    color: #0477BF;
+}
+
+nav span {
+    font-size: 1.1em;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+nav #divider {
+    padding-right: 10px;
+}
+
+/* nav buttons */
+nav ul div li {
+    height: 100%;
+    padding: 10px 20px 10px 20px;
+}
+
+nav ul div a  {
+    color: inherit; /* or black */
+}
+
+.selected {
+    background: #0477BF;
+    color: white;
+}
+
+.selected:hover {
+    background: #0477BF;
+    color: white;
+}
+
+#hamburger_menu {
+    display: none;
+    font-size: 1.5em;
+    padding: 0;
+    margin: 0;
+}
+
+/* TABLET DEVICES (<= 600px) */
+@media only screen and (max-width: 992px) {
+
+    /* hide contact info */
+    nav .info {
+        display: none;
+    }
+
+    /* ... and navigation btns */
+    .nav_btns {
+        display: none;
+    }
+
+    /* ... then show hamburger menu */
+    #hamburger_menu {
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+footer {
+    background: #0477BF;
+    width: 100%;
+    color: white;
+    padding: 40px;
+    padding: 0;
+    padding-top: inherit;
+}
+
+footer .flex-container {
+    width: 100%;
+}
+
+
+/* applied to both footer sections */
+footer .container {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 60%;
+}
+
+/* applied to only the first/main footer sections */
+footer .main_info {
+    padding-bottom: 40px;
+}
+
+footer #copyright {
+    background: #137CC3;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#copyright .container {
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+#copyright .container div {
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+footer i {
+    padding-right: 10px;
+}
+
+/* headings */
+footer p {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+}
+
+footer .column {
+    padding-bottom: 70px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+
+/* TABLET DEVICES (<= 600px) */
+@media only screen and (max-width: 992px) {
+    footer .container {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+/* FRONTPAGE */
+#business-statement {
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    background: white;
+}
+
+
+#business-statement .container {
+    width: 100%;
+}
+
+#business-statement h1 {
+    padding-top: 40px;
+    padding-bottom: 10px;
+    font-size: 1.4em;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+#business-statement .main_text {
+    margin-top: 60px;
+    font-size: 1.8em;
+    line-height: 1.6em;
+}
+
+#business-statement i {
+    color: #0477BF;
+    margin-right: 20px;
+}
+
+#business-statement #epost {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px; /* distance to tlf_num*/
+}
+
+.contact_info #befaring_text_container {
+     margin-bottom: 10px;
+     margin-top: 60px;
+}
+
+
+/* må være id...?! */
+#business-statement #befaring_text {
+    font-size: 1.4em;
+}
+
+#business-statement #tlf_num {
+    margin: 0;
+}
+
+#business-statement #aapningstider {
+    font-size: 0.9em;
+    margin-top: 6px;
+}
+
+#business-statement p {
+    font-size: 1.8em;
+    line-height: 1.6em;
+}
+
+#business-statement .contact_info p {
+    font-size: 1.2em;
+    line-height: 1em;
+}
+
+.contact-btn {
+    background: rgb(4, 119, 191);
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 500px;
+    border: 0;
+    padding: 15px 20px;
+    margin-top: 30px;
+    border: 1px solid rgb(4, 119, 191);
+    transition: .3s;
+}
+
+.contact-btn:hover {
+    background: #fff;
+    color: rgb(4, 119, 191);
+    border: 1px solid rgb(4, 119, 191);
+}
+
+.business-statement {
+    max-width: 900px;
+    padding-top: 80px;
+    padding-left: 10%;
+    margin-bottom: 60px;
+}
+
+.tiles {
+    width: 200px;
+}
+
+.tiles img {
+    width: 100%; /* kommenter ut. ser bedre ut? :P ... ;) */
+}
+
+
+/* tjenester section */
+#tjenester_section {
+    min-height: 50%;
+    flex-direction: column;
+    padding-bottom: 50px;
+    background: whitesmoke;
+
+    min-height: 50%;
+    flex-direction: column;
+    padding-bottom: 200px;
+    padding-top: 100px;
+}
+
+#tjenester_section .container {
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    background: whitesmoke;
+}
+
+#tjenester_section p {
+    margin-bottom: 40px;
+}
+
+#tjenester_section .content {
+    align-items: center;
+    padding-left: 20px;
+}
+
+#tjenester_section i {
+    font-size: 20px;
+    margin: 0;
+    margin-right: 20px;
+    padding: 0;
+}
+
+#tjenester_section h3 {
+    padding: 0;
+    margin: 0;
+}
+
+
+.box {
+    border: 2px solid #0477BF;
+    width: 300px;
+    height: 110px;
+    margin: 20px;
+    font-size: 16px;
+}
+
+.box i {
+    color: #0477BF;
+    font-size: 40px;
+    padding: 25px 15px 0 15px;
+}
+
+/* TABLET */
+@media only screen and (max-width: 992px) {
+    /* use more of the width on tablet and below */
+    #business-statement .container {
+        width: 90%;
+    }
+
+    /* decrease frontpage text size */
+    #business-statement h1 {
+        font-size: 1.2em;
+    }
+
+    #business-statement p {
+        font-size: 1.6em;
+        line-height: 1.6em;
+    }
+
+    #business-statement .contact_info p {
+        font-size: 1em;
+        line-height: 1em;
+    }
+}
+
+
+/* MOBILE */
+@media only screen and (max-width: 600px) {
+    .business-statement {
+        width: 100%;
+        padding-top: 60px;
+        padding-left: 60px;
+        padding-right: 60px;
+        margin-bottom: 60px;
+    }
+
+    .tiles {
+        display: none;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+
+    #business-statement h1 {
+        font-size: 1.1em;
+    }
+
+    #business-statement p  {
+        font-size: 1.4em;
+        line-height: 1.6em;
+    }
+
+    #business-statement .contact_info p {
+        font-size: 0.9em;
+        line-height: 1em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* OM OSS PAGE  */
+#om_oss {
+    min-height: 100%;
+    align-items: flex-start;
+    background: white;
+}
+
+#om_oss .container {
+    flex-flow: row wrap;
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#om_oss p,  #om_oss  li {
+    font-size: 1.5em; line-height: 33px;
+}
+
+.om_oss {
+    max-width: 600px;
+    padding-bottom: 80px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.om_oss h2 {
+    margin-top: 0px;
+    font-size: 3em;
+}
+
+.om_oss .list_heading {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.om_oss .list_item {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.list_item img {
+    height: 25px;
+}
+
+.list_item p {
+    margin: 0;
+    margin-left: 20px;
+}
+
+.mestermerke {
+    width: 100px;
+    margin-top: 40px;
+}
+
+.om_oss ul {
+    color: #404040;
+}
+
+.om_oss ul li {
+    padding: 7px 0 7px 0;
+}
+
+/* google map */
+#om_oss iframe {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border: 1px solid #ddd;
+    width: 400px;
+    height: 300px;
+    margin-left: 60px; margin-right: 60px;
+    box-sizing: border-box;
+}
+
+/* TABLET ( must be in this order!)*/
+@media only screen and (max-width: 992px) {
+    /* style! overrides */
+    #om_oss p,  #om_oss  li  {
+        font-size: 20px; line-height: 26px;
+    }
+}
+
+/* MOBILE */
+@media only screen and (max-width: 600px) {
+    /* google map - utilize more screen width */
+    #om_oss iframe {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    /* utilize more screen width */
+    #om_oss .om_oss  {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    /* utilize more screen width */
+    #om_oss .container {
+        width: 90%;
+    }
+
+    /* decrease text size */
+    #om_oss p, #om_oss  li  {
+        font-size: 16px; line-height: 23px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* KONTAKT PAGE  */
+#kontakt {
+    min-height: 100%;
+    align-items: flex-start;
+    background: white;
+}
+
+#kontakt .container {
+    padding: 50px 0 100px 0;
+    flex-direction: column;
+    width: 700px; /*max not needed?*/
+}
+
+#kontakt h2 {
+    width: 100%;
+    margin-bottom: 0px;
+    font-size: 40px; /*use a default*/
+}
+
+#kontakt p {
+    width: 100%;
+    word-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+form {
+    width: 100%; color: #404040;
+}
+
+input, textarea {
+    border-radius: 5px;
+    height: 35px;
+    border: 1px solid #ddd;
+    outline: none;
+    padding: 3px;
+    padding-left: 6px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+textarea {
+    min-height: 200px;
+    resize: none;
+}
+
+
+input:focus, textarea:focus  {
+    border: 1px solid #BF213E;
+
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    background: #BF213E;
+    border: 1px solid #BF213E;
+    color: white;
+    height: 40px;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: white;
+    color: #BF213E;
+    border: 1px solid #BF213E;
+}
+
+.select_container {
+    margin-bottom: 20px;
+}
+
+select {
+    border: 1px solid #ddd;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+}
+
+/* TABLET */
+@media only screen and (max-width: 992px) {
+    /* use entire mobile screen length  */
+    #kontakt .container {
+        width: 90%;
+    }
+}

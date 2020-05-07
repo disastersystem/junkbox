@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <link rel="stylesheet" href="lib.css">
+        <link rel="stylesheet" href="style.css">
+
+
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Skaug & Christoffersen</title>
+    </head>
+    <body>
+
+        <nav>
+            <div class="flex-container">
+                <div class="container">
+                    <div class="info">
+                        <i class="fas fa-phone"></i><span>413 10 999</span>
+                        <span id="divider"> | </span>
+                        <i class="far fa-envelope"></i><span>post@skaugogchristoffersen.no</span>
+                    </div>
+                    <div>
+                        <ul>
+                            <li id="hamburger_menu" onclick="openNav()"><i class="fas fa-bars"></i></li>
+                            <div class="nav_btns">
+                                <a href="index.html"><li>Hjem</li></a>
+                                <a href="om_oss.html"><li>Om oss</li></a>
+                                <a href="kontakt.html"><li class="selected">Kontakt</li></a>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="sidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul>
+                <li><a href='index.html' onclick="closeNav()">Hjem</a></li>
+                <li><a href="om_oss.html" onclick="closeNav()">Om oss</a></li>
+                <li><a href="kontakt.html" onclick="closeNav()">Kontakt</a></li>
+            </ul>
+        </div>
+
+
+        <section>
+            <div class="section flex-container" id="kontakt">
+                <div class="container">
+
+                    <h2>Kontakt oss</h2>
+                    <p>
+                        Fyll inn skjema under, så vil vi snarest mulig ta kontakt med deg.
+                    </p>
+                    <form   class="" autocomplete="off" action="index.html" method="post">
+                        <div>
+                            <label for="email"><b>Din epost *</b></label>
+                            <input type="email" name="email" value="" required>
+                        </div>
+
+                        <div>
+                            <label for="tlf"><b>Telefonnummer *</b></label>
+                            <input type="text" name="tlf" value=""> <!-- bad support of tlf and email? -->
+                        </div>
+                        <div>
+                            <label for="emne"><b>Emne *</b></label>
+                            <input type="text" name="emne" value="" required>
+                        </div>
+                        <div class="select_container">
+                            <div for="select"><b>Tjeneste type</b></div>
+                            <select name="select">
+                                <optgroup label="Tjenester">
+                                    <option value="">Annet</option>
+                                    <option value="">Serviceoppdrag</option>
+                                    <option value="">Totalrehabilitering av bad</option>
+                                    <option value="">Varme og sanitærinstallasjoner</option>
+                                    <option value="">Varmepumpeinstallasjon</option>
+                                    <option value="">Service av varmeanlegg</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div>
+                            <textarea  name="content" id="content"></textarea>
+                            <input type="submit" name="button"></input>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+
+            <footer>
+                <div class="flex-container">
+                    <div class="container main_info">
+                        <div class="column">
+                            <p>Skaug & Christoffersen AS</p>
+                            <div>
+                                <i class="fas fa-map-marker-alt"></i>Vikersundveien 447 3533 TYRISTRAND</div>
+                            <br>
+                            <div>
+                                Org. nr.&nbsp;&nbsp;923261842
+                            </div>
+                        </div>
+
+                        <div class="column">
+                            <p>Kontakt</p>
+                            <i class="far fa-envelope"></i>post@skaugogchristoffersen.no
+                            <br>
+                            <br>
+                            <i class="fas fa-phone"></i>413 10 999
+                        </div>
+
+                        <div class="column">
+                            <p>Kompetanse</p>
+                            <img height="50" src="assets/Mestermerker.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-container" id="copyright">
+                    <div class="container">
+                        <div>
+                            © 2020 Copyright Skaug & Christoffersen AS <!-- update with js or php? -->
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+
+        <script src="main.js" charset="utf-8"></script>
+    </body>
+</html>

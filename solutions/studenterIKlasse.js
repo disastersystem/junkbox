@@ -29,7 +29,7 @@ fetch('studenter.json')
                             </p>`
                         ul.appendChild(li)
                     }
-                });
+                })
             })
         })
     })
