@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+</head>
+<body>
+
+  <h1> Profile </h1>
+
+  <form name="Login" method="post" action="#" onsubmit="return UpdateProfile()">
+
+    Your Name <br>
+    <input type="text" name="fName" id="FN"> <br>
+
+    Age <br>
+    <input type="text" name="ageField" id="age"> <br>
+
+    Email <br>
+    <input type="text" name="email" id="e"><br>
+
+    Number <br>
+    <input type="tet " name="number" id="num">
+
+
+    <input type="submit" name="sub" value="Update">
+
+  </form>
+
+
+  <script type="text/javascript">
+
+    const firstName = document.getElementById("FN");
+    const age = document.getElementById("age");
+    const email = document.getElementById("e");
+    const number = document.getElementById("num");
+
+    class Profile {
+      constructor() {
+        this._Name  = localStorage.getItem('Name');
+        this._Age = localStorage.getItem("Age");
+        this._Email = localStorage.getItem("E-mail");
+        this._Telephone_number = localStorage.getItem("Mobile_number");
+      }
+
+      setProfile(n, a, e, t) {
+        let Name = n;
+        let Age = a;
+        let Email = e;
+        let Telephone_number = t;
+
+        this.saveProfile(Name, Age, Email, Telephone_number);
+      }
+
+      saveProfile(Name, Age, Email, Telephone_number) {
+          // save in localStorage
+          localStorage.setItem("Name", Name)
+          localStorage.setItem("Age", Age)
+          localStorage.setItem("E-mail", Email)
+          localStorage.setItem("Mobile_number", Telephone_number)
+
+          // update our properties
+          this._Name = Name;
+          this._Age = Age;
+          this._Email = Email
+          this._Telephone_number = Telephone_number;
+      }
+
+      getProfile() {
+        firstName.value = this._Name
+        age.value       = this._Age
+        email.value     = this._Email
+        number.value    = this._Telephone_number
+      }
+    }
+
+
+    function validateForm() {
+      let fN = firstName.value;
+      let a = age.value;
+      let em = email.value;
+      let num =  number.value;
+
+      if (!fN || !a || !em || !num){
+        alert("Please fill inn all the fields")
+        return false;
+      }
+
+      if (fN.length < 3){
+        alert("Name can't be less than 3 characters")
+        return false;
+      }
+
+      if (isNaN(a) || a < 12 || a > 95){
+        alert("Age should be between 12 and 95");
+        return false;
+      }
+
+      if (isNaN(num) || num.length != 7){
+        alert("Phone number must be 7 digits")
+        return false;
+      }
+    
+      let checkingem = em.substring(em.length-8);
+      var atpos=em.indexOf("@");
+      var dotpos=em.lastIndexOf(".");
+
+      if (atpos<1 || dotpos<atpos+2 || dotpos+2>=em.length) {
+          alert("Not a valid e-mail address");
+          return false;
+      }
+
+      if (checkingem != "@ntnu.no") {
+        alert("The email is not a @ntnu.no email");
+        return false;
+      }
+    }
+
+
+    function UpdateProfile() {
+      let profile = new Profile();
+
+      if (validateForm() != false) {
+        profile.setProfile(firstName.value, age.value, email.value, number.value);
+        return false // return false here as well so that the form does not submit to action="#"
+      }
+      else {
+        return false
+      }
+    }
+
+    function displayProfile(){
+      let profile = new Profile();
+      profile.getProfile();
+    }
+
+    document.onload = displayProfile();
+  </script>
+</body>
+</html>
