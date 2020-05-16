@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+</head>
+<body>
+
+  <h1> Profile </h1>
+
+  <form name="Login" method="post" action="#" onsubmit="return UpdateProfile()">
+    Your Name <br>
+    <input type="text" name="fName" id="name"> <br>
+
+    Age <br>
+    <input type="text" name="ageField" id="age"> <br>
+
+    Email <br>
+    <input type="text" name="email" id="email"> <br>
+
+    Number <br>
+    <input type="text" name="number" id="number"> <br>
+
+    <input type="submit" name="sub" value="Update">
+  </form>
+
+
+  <script type="text/javascript">
+
+    const name = document.getElementById("name")
+    const age = document.getElementById("age")
+    const email = document.getElementById("email")
+    const number = document.getElementById("number")
+
+    class Profile {
+      constructor() {
+        this.name  = localStorage.getItem('name')
+        this.age = localStorage.getItem("age")
+        this.email = localStorage.getItem("email")
+        this.number = localStorage.getItem("number")
+      }
+
+      setProfile(n, a, e, t) {
+        let name = n
+        let age = a
+        let email = e
+        let number = t
+
+        // send disse lokale variablene videre til saveProfile metoden vår
+        this.saveProfile(name, age, email, number)
+      }
+
+      saveProfile(name, age, email, number) {
+        // save in localStorage
+        localStorage.setItem("name", name)
+        localStorage.setItem("age", age)
+        localStorage.setItem("email", email)
+        localStorage.setItem("number", number)
+
+        // update our properties
+        this.name = name
+        this.age = age
+        this.email = email
+        this.number = number
+      }
+
+      getProfile() {
+        name.value   = this.name
+        age.value    = this.age
+        email.value  = this.email
+        number.value = this.number
+      }
+    }
+
+
+    function validateForm() {
+      let name = document.getElementById('name').value
+      let age = document.getElementById('age').value
+      let email = document.getElementById('email').value
+      let number = document.getElementById('number').value
+
+      // is any of the fields empty?
+      if (name == '' || age == '' || email == '' || number == '') {
+        alert("fields can not be empty")
+        return false
+      }
+
+      if (name.length < 3) {
+        alert("name can't be less than 3 characters")
+        return false
+      }
+
+      if (parseInt(age) < 12 || parseInt(age) > 95) {
+        alert("age should be between 12 and 95")
+        return false
+      }
+
+      if (number.length != 7) {
+        alert("phone number must be 7 digits")
+        return false
+      }
+
+      // indexOf returns -1 hvis den ikke finner "@ntnu.no"
+      var domain = email.indexOf("@ntnu.no");
+      if (domain == -1) {
+        alert("Not a valid NTNU e-mail address");
+        return false
+      }
+
+      // hvis alt er godkjent
+      return true
+    }
+
+
+    function UpdateProfile() {
+      let profile = new Profile()
+
+      if (validateForm() != false) {
+        profile.setProfile(name.value, age.value, email.value, number.value)
+        return false // return false here as well so that the form does not submit to action="#"
+      } else {
+        return false
+      }
+    }
+
+    function displayProfile() {
+      let profile = new Profile()
+      profile.getProfile()
+    }
+
+    // la oss kjøre displayProfile med engang dokumentet har lastet inn
+    document.onload = displayProfile()
+  </script>
+</body>
+</html>

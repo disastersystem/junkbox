@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation</title>
+</head>
+<body>
+
+<h1>Profile</h1>
+
+
+<form name="profile" method="post" action="#" onsubmit="return updateProfile()">
+	Your Name <br>
+	<input type="text" name="fName" id="name"> <br>
+
+	Age <br>
+	<input type="text" name="ageField" id="age"> <br>
+
+	Email <br>
+	<input type="text" name="email" id="email"> <br>
+
+	Number <br>
+	<input type="text" name="number" id="number"> <br>
+
+	<input type="submit" name="sub" value="Update">
+</form>
+
+
+<script type="text/javascript">
+	class Profile {
+		setProfile(n, a, e, t) {
+			// lagre verdiene som properties av klassen vår
+			this.name = n
+			this.age = a
+			this.email = e
+			this.phone = t
+
+			this.saveProfile()
+		}
+
+		saveProfile() {
+			localStorage.setItem('name', this.name)
+			localStorage.setItem('age', this.age)
+			localStorage.setItem('email', this.email)
+			localStorage.setItem('number', this.phone)
+		}
+
+		getProfile() {
+			// hvis localStorage ikke er tom
+			if (localStorage.length != 0) {
+				document.getElementById('name').value = localStorage.getItem('name')
+				document.getElementById('age').value = localStorage.getItem('age')
+				document.getElementById('email').value = localStorage.getItem('email')
+				document.getElementById('number').value = localStorage.getItem('number')
+			}
+		}
+	}
+
+
+	function validateForm() {
+		let name = document.getElementById('name').value
+		let age = document.getElementById('age').value
+		let email = document.getElementById('email').value
+		let number = document.getElementById('number').value
+
+		// is any of the fields empty?
+		if (name == '' || age == '' || email == '' || number == '') {
+			alert("fields can not be empty")
+			return false
+		}
+
+		if (name.length < 3) {
+      alert("name can't be less than 3 characters")
+      return false
+    }
+
+		if (parseInt(age) < 12 || parseInt(age) > 95) {
+			alert("age should be between 12 and 95")
+			return false
+		}
+
+		if (number.length != 7) {
+			alert("phone number must be 7 digits")
+			return false
+		}
+
+		// indexOf returns -1 hvis den ikke finner "@ntnu.no"
+	  var domain = email.indexOf("@ntnu.no");
+	  if (domain == -1) {
+      alert("Not a valid NTNU e-mail address");
+      return false
+    }
+
+    // hvis vi alt er godkjent
+    return true
+	}
+
+	function updateProfile () {
+		if (validateForm()) {
+			let name = document.getElementById('name').value
+			let age = document.getElementById('age').value
+			let email = document.getElementById('email').value
+			let number = document.getElementById('number').value
+
+			let profile = new Profile()
+			profile.setProfile(name, age, email, number)
+		}
+
+		// stop the form from submitting to action="#"
+		return false
+	}
+
+	function displayProfile() {
+		let profile = new Profile()
+		profile.getProfile()
+	}
+
+	// la oss kjøre displayProfile med engang
+	displayProfile()
+</script>
+
+
+</body>
+</html>
