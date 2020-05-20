@@ -5,27 +5,27 @@
 </head>
 <body>
 
-<h1>Profile</h1>
+	<h1>Profile</h1>
 
 
-<form name="profile" method="post" action="#" onsubmit="return updateProfile()">
-	Your Name <br>
-	<input type="text" name="fName" id="name"> <br>
+	<form name="profile" method="post" action="#" onsubmit="return updateProfile()">
+		Your Name <br>
+		<input type="text" name="fName" id="name"> <br>
 
-	Age <br>
-	<input type="text" name="ageField" id="age"> <br>
+		Age <br>
+		<input type="text" name="ageField" id="age"> <br>
 
-	Email <br>
-	<input type="text" name="email" id="email"> <br>
+		Email <br>
+		<input type="text" name="email" id="email"> <br>
 
-	Number <br>
-	<input type="text" name="number" id="number"> <br>
+		Number <br>
+		<input type="text" name="number" id="number"> <br>
 
-	<input type="submit" name="sub" value="Update">
-</form>
+		<input type="submit" name="sub" value="Update">
+	</form>
 
 
-<script type="text/javascript">
+	<script type="text/javascript">
 	class Profile {
 		setProfile(n, a, e, t) {
 			// lagre verdiene som properties av klassen vår
@@ -69,9 +69,9 @@
 		}
 
 		if (name.length < 3) {
-      alert("name can't be less than 3 characters")
-      return false
-    }
+			alert("name can't be less than 3 characters")
+			return false
+		}
 
 		if (parseInt(age) < 12 || parseInt(age) > 95) {
 			alert("age should be between 12 and 95")
@@ -84,14 +84,14 @@
 		}
 
 		// indexOf returns -1 hvis den ikke finner "@ntnu.no"
-	  var domain = email.indexOf("@ntnu.no");
-	  if (domain == -1) {
-      alert("Not a valid NTNU e-mail address");
-      return false
-    }
+		var domain = email.indexOf("@ntnu.no");
+		if (domain == -1) {
+			alert("Not a valid NTNU e-mail address");
+			return false
+		}
 
-    // hvis vi alt er godkjent
-    return true
+		// hvis vi alt er godkjent
+		return true
 	}
 
 	function updateProfile () {
@@ -116,7 +116,7 @@
 
 	// la oss kjøre displayProfile med engang
 	displayProfile()
-</script>
+	</script>
 
 
 </body>
