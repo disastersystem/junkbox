@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style>
+      body { margin: 100px; } h2 { display: inline-block; } form { margin-top: 50px; } input { margin-bottom: 20px; padding: 5px; }
+    </style>
+  </head>
+  <body>
+
+    <h2>Counter:</h2>
+    <h2 id="counter">0</h2>
+
+    <form>
+      <label for="number">Number (50-70)</label><br>
+      <input type="number" min="50" max="70" id="num"><br>
+      <input type="submit" id="submit" name="sub" value="add">
+    </form>
+
+    <script>
+      function incrementCounter() {
+          document.querySelector('form').addEventListener('submit', e => {
+              e.preventDefault()
+              let newNumber = parseInt(document.querySelector('#num').value)
+              let oldNumber = parseInt(document.querySelector('#counter').innerHTML)
+              // add the new number to the current number
+              let value = oldNumber += newNumber
+
+              document.querySelector('#counter').innerHTML = value
+          })
+      }
+
+      document.querySelector('#submit').addEventListener("click", e => {
+        incrementCounter()
+      })
+    </script>
+  </body>
+</html>
