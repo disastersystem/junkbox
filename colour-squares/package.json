@@ -1,6 +1,0 @@
-{
-  "devDependencies": {},
-  "dependencies": {
-    "chess.js": "^0.10.2"
-  }
-}
